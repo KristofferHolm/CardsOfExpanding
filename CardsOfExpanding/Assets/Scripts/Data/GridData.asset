@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5721c91c811cd2a4b977724c31623edb, type: 3}
+  m_Name: GridData
+  m_EditorClassIdentifier: 
+  GridDatas:
+  - Name: Undecided
+    Key: 0
+    Properties:
+      GroundType: {fileID: 0}
+      Graphic: {fileID: 0}
+      BuildingID: 0
+  - Name: Sea
+    Key: 1
+    Properties:
+      GroundType: {fileID: 2100000, guid: 29536bbd43bad34408b4b8987cea74d0, type: 2}
+      Graphic: {fileID: 0}
+      BuildingID: 0
+  - Name: Plane
+    Key: 2
+    Properties:
+      GroundType: {fileID: 2100000, guid: 11c4fb615ff4b1648a53de49d48efdf8, type: 2}
+      Graphic: {fileID: 0}
+      BuildingID: 0
+  - Name: Trees
+    Key: 3
+    Properties:
+      GroundType: {fileID: 2100000, guid: 11c4fb615ff4b1648a53de49d48efdf8, type: 2}
+      Graphic: {fileID: 2346015385588325867, guid: 5be905952f0d4154ea6fda6f98553318, type: 3}
+      BuildingID: 0
+  - Name: Stones
+    Key: 4
+    Properties:
+      GroundType: {fileID: 2100000, guid: 11c4fb615ff4b1648a53de49d48efdf8, type: 2}
+      Graphic: {fileID: 2346015385588325867, guid: 9ff25af1a4776d34285cfb308d7be56b, type: 3}
+      BuildingID: 0
+  - Name: Berries
+    Key: 5
+    Properties:
+      GroundType: {fileID: 2100000, guid: 11c4fb615ff4b1648a53de49d48efdf8, type: 2}
+      Graphic: {fileID: 2346015385588325867, guid: a804a68c26b14a242bfb0bd523b3a01d, type: 3}
+      BuildingID: 0
+  - Name: Fish
+    Key: 6
+    Properties:
+      GroundType: {fileID: 2100000, guid: 29536bbd43bad34408b4b8987cea74d0, type: 2}
+      Graphic: {fileID: 2346015385588325867, guid: efc0dd523ab301945aa15c30fc97dffb, type: 3}
+      BuildingID: 0
+  - Name: Fish
+    Key: 7
+    Properties:
+      GroundType: {fileID: 2100000, guid: b384b1f0938ded048840534bd9a05d84, type: 2}
+      Graphic: {fileID: 2346015385588325867, guid: 680feafe94a1e8a4f8cbd36ff3ffeecd, type: 3}
+      BuildingID: 0
