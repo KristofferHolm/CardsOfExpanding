@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.7f1 (d91830b65d9b) revision 14227504'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19042.1288; Version 2009; 64bit' Language: 'en' Physical Memory: 65460 MB
+OS: 'Windows 10 Pro; OS build 19042.1348; Version 2009; 64bit' Language: 'en' Physical Memory: 65460 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,19 +11,19 @@ C:\Program Files\Unity\Hub\Editor\2021.1.7f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/UnityProjects/KrisMinion/KrisMinion
+C:/UnityProjects/CardsOfExpanding
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49942
-Successfully changed project path to: C:/UnityProjects/KrisMinion/KrisMinion
-C:/UnityProjects/KrisMinion/KrisMinion
+51392
+Successfully changed project path to: C:/UnityProjects/CardsOfExpanding
+C:/UnityProjects/CardsOfExpanding
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 101.93 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 106.02 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/UnityProjects/KrisMinion/KrisMinion/Assets
+[Subsystems] Discovering subsystems at path C:/UnityProjects/CardsOfExpanding/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -35,60 +35,66 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56600
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001778 seconds.
+Registered in 0.001739 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 107.94 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 109.36 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.876 seconds
+- Completed reload, in  1.808 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002888 seconds.
+Registered in 0.002384 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 108.44 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 110.42 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.334 seconds
+- Completed reload, in  1.362 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.19 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.21 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5202 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 202.1 MB.
-System memory in use after: 200.7 MB.
+Unloading 5216 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 204.5 MB.
+System memory in use after: 203.0 MB.
 
-Unloading 143 unused Assets to reduce memory usage. Loaded Objects now: 5616.
-Total: 4.859500 ms (FindLiveObjects: 0.520500 ms CreateObjectMapping: 0.145300 ms MarkObjects: 3.252000 ms  DeleteObjects: 0.940300 ms)
+Unloading 143 unused Assets to reduce memory usage. Loaded Objects now: 5630.
+Total: 4.146700 ms (FindLiveObjects: 0.608200 ms CreateObjectMapping: 0.137000 ms MarkObjects: 2.469800 ms  DeleteObjects: 0.930700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/HexGrid/GridData.asset
-  artifactKey: Guid(d1a4c434d3cecba4c87109fa4faf895b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HexGrid/GridData.asset using Guid(d1a4c434d3cecba4c87109fa4faf895b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd5126761eb92ec61b1fec745d514cd8') in 0.032090 seconds 
+  path: Assets/Prefabs/HexGrids/HexGrid.prefab
+  artifactKey: Guid(0c5c7d08fdfc2ad418aeed4b0aca5ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HexGrids/HexGrid.prefab using Guid(0c5c7d08fdfc2ad418aeed4b0aca5ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: An instance of HexGridPropertiesManager is needed in the scene, but there is none.
+  at Singleton`1[T].get_Instance () [0x00042] in C:\UnityProjects\CardsOfExpanding\Assets\Scripts\Tools\Singleton.cs:18 
+  at HexGridBehaviour.OnValidate () [0x00001] in C:\UnityProjects\CardsOfExpanding\Assets\Scripts\HexGrid\HexGridBehaviour.cs:15 
+
+(Filename: Assets/Scripts/Tools/Singleton.cs Line: 18)
+
+ -> (artifact id: '17e76fea3a0427843f6aa76203270a61') in 0.062914 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 64.688106 seconds.
-  path: Assets/Scripts/HexGrid/GridDataInspector.cs
-  artifactKey: Guid(057cdae4a5a7ec646b4ce802bbe4c68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HexGrid/GridDataInspector.cs using Guid(057cdae4a5a7ec646b4ce802bbe4c68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '527a9a7d93e3dfb77d9525650df69621') in 0.009898 seconds 
+  Time since last request: 16.012095 seconds.
+  path: Assets/Prefabs/HexGrids/HexGrid_Plane.prefab
+  artifactKey: Guid(8fb0839e1be276c4ca3e75c2eafcd92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HexGrids/HexGrid_Plane.prefab using Guid(8fb0839e1be276c4ca3e75c2eafcd92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bea472a0a12b88afcfae6203c5b83fd1') in 0.007738 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.002974 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -102,409 +108,52 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 [Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
 
 Mono: successfully reloaded assembly
-- Completed reload, in  0.998 seconds
+- Completed reload, in  1.015 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 1.13 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5071 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 194.8 MB.
-System memory in use after: 193.3 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5619.
-Total: 4.447700 ms (FindLiveObjects: 0.573700 ms CreateObjectMapping: 0.137400 ms MarkObjects: 2.932600 ms  DeleteObjects: 0.802600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002950 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  0.999 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5071 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 194.9 MB.
-System memory in use after: 193.4 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5622.
-Total: 3.924100 ms (FindLiveObjects: 0.508200 ms CreateObjectMapping: 0.138500 ms MarkObjects: 2.425200 ms  DeleteObjects: 0.851400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002949 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  0.987 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.13 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5071 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 195.0 MB.
-System memory in use after: 193.6 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5625.
-Total: 4.107800 ms (FindLiveObjects: 0.547600 ms CreateObjectMapping: 0.153000 ms MarkObjects: 2.433000 ms  DeleteObjects: 0.973100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 77.830285 seconds.
-  path: Assets/Scripts/HexGrid/GridDataInspector.cs
-  artifactKey: Guid(057cdae4a5a7ec646b4ce802bbe4c68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HexGrid/GridDataInspector.cs using Guid(057cdae4a5a7ec646b4ce802bbe4c68b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c08e83db8d07c190bc387d97764c2f5') in 0.008701 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.750798 seconds.
-  path: Assets/Scripts/HexGrid/GridData Test.asset
-  artifactKey: Guid(13c9595bf700b5243a93144460fdc71a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HexGrid/GridData Test.asset using Guid(13c9595bf700b5243a93144460fdc71a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfdcc8390190e1460f994b74aefdca63') in 0.050916 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002885 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.008 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5071 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 195.0 MB.
-System memory in use after: 193.6 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5628.
-Total: 4.341600 ms (FindLiveObjects: 0.609500 ms CreateObjectMapping: 0.353800 ms MarkObjects: 2.527200 ms  DeleteObjects: 0.850000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 47.176269 seconds.
-  path: Assets/Scripts/Tools/GridProperties.cs
-  artifactKey: Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Tools/GridProperties.cs using Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6162ceb4e750d9c469d381f5cfc5892') in 0.012526 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.819210 seconds.
-  path: Assets/Scripts/Tools/GridData.cs
-  artifactKey: Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Tools/GridData.cs using Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dcc053f5b4000d0913ea2648981d5f6') in 0.002654 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002868 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.000 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5071 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 194.8 MB.
-System memory in use after: 193.4 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5631.
-Total: 4.092500 ms (FindLiveObjects: 0.522800 ms CreateObjectMapping: 0.139600 ms MarkObjects: 2.497600 ms  DeleteObjects: 0.931600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.152533 seconds.
-  path: Assets/Scripts/HexGrid/GridData Test.asset
-  artifactKey: Guid(13c9595bf700b5243a93144460fdc71a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HexGrid/GridData Test.asset using Guid(13c9595bf700b5243a93144460fdc71a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f95de81bebfc660c6aab0df47fb97d4') in 0.035618 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000162 seconds.
-  path: Assets/Scripts/HexGrid/GridData.asset
-  artifactKey: Guid(d1a4c434d3cecba4c87109fa4faf895b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HexGrid/GridData.asset using Guid(d1a4c434d3cecba4c87109fa4faf895b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42a8420fd96dac2dde1f525a51397404') in 0.002720 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.794433 seconds.
-  path: Assets/Scripts/Tools/GridData.asset
-  artifactKey: Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Tools/GridData.asset using Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c6812a0a2cea6bf043dc2f4c7cbb762') in 0.004431 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.790564 seconds.
-  path: Assets/BlenderModels/HouseBlue.mat
-  artifactKey: Guid(8408da53c413ad943a45c8a547418b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BlenderModels/HouseBlue.mat using Guid(8408da53c413ad943a45c8a547418b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5399364044e81f7f798e03722cd9a598') in 0.178648 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000182 seconds.
-  path: Assets/BlenderModels/HouseGreen.mat
-  artifactKey: Guid(6734a4544f07d1d46af4642a41c36c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BlenderModels/HouseGreen.mat using Guid(6734a4544f07d1d46af4642a41c36c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e1852533671608bb1fe916604f334c3') in 0.012623 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002951 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.050 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.19 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5071 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 200.8 MB.
-System memory in use after: 199.4 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5712.
-Total: 4.992200 ms (FindLiveObjects: 0.656100 ms CreateObjectMapping: 0.465500 ms MarkObjects: 3.053600 ms  DeleteObjects: 0.815800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 97.926636 seconds.
-  path: Assets/Scripts/Tools/GridData.cs
-  artifactKey: Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Tools/GridData.cs using Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '784a94f7080ceb72c70720b6b76ba8ec') in 0.008483 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.285918 seconds.
-  path: Assets/Scripts/BuildingManager.cs
-  artifactKey: Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BuildingManager.cs using Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fc5b4ec330fb614ef549668af8956d8') in 0.006396 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.772531 seconds.
-  path: Assets/Scripts/BuildingManager.cs
-  artifactKey: Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BuildingManager.cs using Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fb46778c6285ac9526c536de1472e61') in 0.002207 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.234716 seconds.
-  path: Assets/Scripts/Tools/Singleton.cs
-  artifactKey: Guid(c67aae9648eab9140ba5c2cdd2718440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Tools/Singleton.cs using Guid(c67aae9648eab9140ba5c2cdd2718440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcb7fe31083d2e7e10f918af2ec7ad34') in 0.006013 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2131.927055 seconds.
-  path: Assets/Scripts/BuildingManager.cs
-  artifactKey: Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BuildingManager.cs using Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78832ba7739cffaa4d61504231035e26') in 0.002529 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.205907 seconds.
-  path: Assets/Scripts/BuildingData.cs
-  artifactKey: Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/BuildingData.cs using Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91f8352d9fea5122d639922381bf6294') in 0.006091 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.329603 seconds.
-  path: Assets/Scripts/Data
-  artifactKey: Guid(a8fcfdb790e65174986d01b6c653ed9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data using Guid(a8fcfdb790e65174986d01b6c653ed9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b8575e6916eca844128757dc932f1f1') in 0.007003 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.249992 seconds.
-  path: Assets/Scripts/HexGrid/GridData.asset
-  artifactKey: Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HexGrid/GridData.asset using Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e91c54c89571aa579047c92234c2683b') in 0.022202 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002891 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.040 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 200.8 MB.
-System memory in use after: 199.3 MB.
+System memory in use before: 196.0 MB.
+System memory in use after: 194.5 MB.
 
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5716.
-Total: 4.153100 ms (FindLiveObjects: 0.525000 ms CreateObjectMapping: 0.138100 ms MarkObjects: 2.578900 ms  DeleteObjects: 0.909400 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5633.
+Total: 3.986000 ms (FindLiveObjects: 0.509500 ms CreateObjectMapping: 0.138500 ms MarkObjects: 2.533500 ms  DeleteObjects: 0.803500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 254.668575 seconds.
-  path: Assets/Scripts/Data/BuildingData.cs
-  artifactKey: Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/BuildingData.cs using Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '935c46858b67438f487ef67d025f7dbe') in 0.009085 seconds 
+  Time since last request: 331.082568 seconds.
+  path: Assets/Prefabs/HexGrids/HexRing.prefab
+  artifactKey: Guid(8d0b72ce60ba87942ade996f083b9291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HexGrids/HexRing.prefab using Guid(8d0b72ce60ba87942ade996f083b9291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79383a5b431667d896d34b7168f2bc0b') in 0.053932 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1252.665477 seconds.
-  path: Assets/Materials/GroundMats
-  artifactKey: Guid(18747e81e1b735c4f8ed0fd7cbcd5382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/GroundMats using Guid(18747e81e1b735c4f8ed0fd7cbcd5382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12364a33eddbe28deacea1e1db79f8d3') in 0.008330 seconds 
+  Time since last request: 123.180956 seconds.
+  path: Assets/Prefabs/GameItems/Berries.prefab
+  artifactKey: Guid(a804a68c26b14a242bfb0bd523b3a01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameItems/Berries.prefab using Guid(a804a68c26b14a242bfb0bd523b3a01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36c6478221778d7d00df78517f0fd159') in 0.159470 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.952032 seconds.
-  path: Assets/Textures/Gravel.png
-  artifactKey: Guid(247bf72972e74634d833c10bcc9a79b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/Gravel.png using Guid(247bf72972e74634d833c10bcc9a79b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaf517999e7d3f045bbd52c59cf7bfa3') in 0.083072 seconds 
+  Time since last request: 0.387422 seconds.
+  path: Assets/Prefabs/GameItems/BuildingPrototype.prefab
+  artifactKey: Guid(680feafe94a1e8a4f8cbd36ff3ffeecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameItems/BuildingPrototype.prefab using Guid(680feafe94a1e8a4f8cbd36ff3ffeecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54272820f994de111f1471982c0c980a') in 0.051904 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/Textures/GravelNormal.png
-  artifactKey: Guid(cd44e85763f6e4942bc1aedb474c3236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/GravelNormal.png using Guid(cd44e85763f6e4942bc1aedb474c3236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '002b4483291879f6d485b69253249b6e') in 0.016165 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/BlenderModels/BlenderTextures/RedCarpet_S.jpg
-  artifactKey: Guid(3ce456e1f0e12ed4ab784bbba25b63dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BlenderModels/BlenderTextures/RedCarpet_S.jpg using Guid(3ce456e1f0e12ed4ab784bbba25b63dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8cd690b6065612e1139cdcfd3474d7d') in 0.022537 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 59.601248 seconds.
-  path: Assets/Scripts/Data/GridData.asset
-  artifactKey: Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/GridData.asset using Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbec5f2f2ba74fbed709b529c533dda4') in 0.033961 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.544860 seconds.
-  path: Assets/Materials/GroundMats/Gravel.mat
-  artifactKey: Guid(b384b1f0938ded048840534bd9a05d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/GroundMats/Gravel.mat using Guid(b384b1f0938ded048840534bd9a05d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aa0e446b88611d1e56f4c844ed4cffe') in 0.184915 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 32.633817 seconds.
-  path: Assets/Scripts/Data/BuildingsData.asset
-  artifactKey: Guid(f7d25756f28490d4889d2b3fc49bd362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/BuildingsData.asset using Guid(f7d25756f28490d4889d2b3fc49bd362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f39da715127af030376a8334395f4705') in 0.008167 seconds 
+  Time since last request: 58.808087 seconds.
+  path: Assets/Prefabs/GameItems/Empty.prefab
+  artifactKey: Guid(bba116c18ee9c8c47abd7613c60473b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameItems/Empty.prefab using Guid(bba116c18ee9c8c47abd7613c60473b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb20b4f26743f35873a57b4392b64f23') in 0.007873 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.021589 seconds.
+Registered in 0.002967 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.203 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5075 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 205.4 MB.
-System memory in use after: 203.9 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5802.
-Total: 4.853700 ms (FindLiveObjects: 0.577900 ms CreateObjectMapping: 0.149100 ms MarkObjects: 3.241400 ms  DeleteObjects: 0.884000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002949 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -520,388 +169,22 @@ Mono: successfully reloaded assembly
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 205.3 MB.
-System memory in use after: 203.8 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5805.
-Total: 4.230900 ms (FindLiveObjects: 0.522700 ms CreateObjectMapping: 0.137200 ms MarkObjects: 2.654900 ms  DeleteObjects: 0.915300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002950 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.028 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 205.0 MB.
-System memory in use after: 203.6 MB.
+System memory in use before: 201.6 MB.
+System memory in use after: 200.2 MB.
 
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5808.
-Total: 4.160600 ms (FindLiveObjects: 0.552700 ms CreateObjectMapping: 0.139700 ms MarkObjects: 2.575200 ms  DeleteObjects: 0.891900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 242.016050 seconds.
-  path: Assets/Prefabs/GameItems/House.prefab
-  artifactKey: Guid(627622a22d0285644940ea98f65dc01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameItems/House.prefab using Guid(627622a22d0285644940ea98f65dc01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca2fcbc1d574e3cca8fc2dacd7a44f07') in 0.199231 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.657924 seconds.
-  path: Assets/Prefabs/GameItems/Stones.prefab
-  artifactKey: Guid(9ff25af1a4776d34285cfb308d7be56b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameItems/Stones.prefab using Guid(9ff25af1a4776d34285cfb308d7be56b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '590caa75b12257f36d8777356c4feb96') in 0.014878 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.005710 seconds.
-  path: Assets/Prefabs/GameItems/House 1.prefab
-  artifactKey: Guid(680feafe94a1e8a4f8cbd36ff3ffeecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameItems/House 1.prefab using Guid(680feafe94a1e8a4f8cbd36ff3ffeecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd18fd93325d39e3c302882097adcc25') in 0.025062 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.224405 seconds.
-  path: Assets/Prefabs/GameItems/BuildingPrototype.prefab
-  artifactKey: Guid(680feafe94a1e8a4f8cbd36ff3ffeecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameItems/BuildingPrototype.prefab using Guid(680feafe94a1e8a4f8cbd36ff3ffeecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2843dd3ee2173be3c9febcee4a3d0204') in 0.016151 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002962 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.037 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.17 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 205.5 MB.
-System memory in use after: 204.0 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5847.
-Total: 4.266200 ms (FindLiveObjects: 0.579500 ms CreateObjectMapping: 0.151500 ms MarkObjects: 2.635000 ms  DeleteObjects: 0.899300 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5682.
+Total: 3.992000 ms (FindLiveObjects: 0.539100 ms CreateObjectMapping: 0.138400 ms MarkObjects: 2.532600 ms  DeleteObjects: 0.780400 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002966 seconds.
+Registered in 0.002864 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.032 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 205.5 MB.
-System memory in use after: 204.0 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5850.
-Total: 5.059400 ms (FindLiveObjects: 0.728600 ms CreateObjectMapping: 0.149100 ms MarkObjects: 3.254100 ms  DeleteObjects: 0.926400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002949 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.13 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.028 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 205.4 MB.
-System memory in use after: 204.0 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5853.
-Total: 5.081700 ms (FindLiveObjects: 0.592200 ms CreateObjectMapping: 0.142600 ms MarkObjects: 3.411500 ms  DeleteObjects: 0.933800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002960 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.17 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.049 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.20 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 205.4 MB.
-System memory in use after: 204.0 MB.
-
-Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5856.
-Total: 4.731800 ms (FindLiveObjects: 0.552000 ms CreateObjectMapping: 0.332400 ms MarkObjects: 2.963400 ms  DeleteObjects: 0.883000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 870.704761 seconds.
-  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
-  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f57fe8dc4c9ae30de38a2da0d89f10') in 0.224369 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000180 seconds.
-  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
-  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c511d08932308b24457774e53c6d0cc5') in 0.061580 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
-  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99bc742907ac7fb12ea8add2d3c32955') in 0.038819 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000222 seconds.
-  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
-  artifactKey: Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset using Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1086c45db6b08dcccce6d79d94e9dad1') in 0.035722 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.031023 seconds.
-  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
-  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2c2db17f3d234c01acf4c66d594765d') in 0.041868 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 368.217316 seconds.
-  path: Assets/Scripts/Data/BuildingsData.asset
-  artifactKey: Guid(f7d25756f28490d4889d2b3fc49bd362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/BuildingsData.asset using Guid(f7d25756f28490d4889d2b3fc49bd362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b89ae5a4de5e3d3235075c401e38c6c') in 0.007316 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.382903 seconds.
-  path: Assets/Scripts/Data/BuildingsData.cs
-  artifactKey: Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/BuildingsData.cs using Guid(115243dcfedda0c40a76469c7daf0e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '983c478ad25a78cc0d91fff4b5a7c3cb') in 0.002786 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.360110 seconds.
-  path: Assets/Scripts/Data/BuildingsData.asset
-  artifactKey: Guid(f7d25756f28490d4889d2b3fc49bd362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/BuildingsData.asset using Guid(f7d25756f28490d4889d2b3fc49bd362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '882377238e4a1e10110bf0ab7fa51475') in 0.004287 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 37.507008 seconds.
-  path: Assets/Scripts/Data/GridData.asset
-  artifactKey: Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/GridData.asset using Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffce1cd29bae513de93fdd56d89e1c86') in 0.031251 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.412415 seconds.
-  path: Assets/Scripts/Data/GridData.asset
-  artifactKey: Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/GridData.asset using Guid(63866b820951fe941842714e73044118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96f60b4dde211fe1dec839fa5acdc6f8') in 0.038390 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.360274 seconds.
-  path: Assets/Scripts/Data/BuildingsData.asset
-  artifactKey: Guid(f7d25756f28490d4889d2b3fc49bd362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/BuildingsData.asset using Guid(f7d25756f28490d4889d2b3fc49bd362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3015970ae784a84a8b2b82a36e0de367') in 0.004732 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 65.262514 seconds.
-  path: Assets/Scripts/Data/GridData.cs
-  artifactKey: Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/GridData.cs using Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b161616b9351a4f629e4ca20980f19dd') in 0.002669 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 102.977958 seconds.
-  path: Assets/Scripts/Data/GridData.cs
-  artifactKey: Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data/GridData.cs using Guid(5721c91c811cd2a4b977724c31623edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33c39e1845b6432d345c8c278462ae8d') in 0.002652 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003012 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.060 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5088 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 209.8 MB.
-System memory in use after: 207.8 MB.
-
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 5945.
-Total: 4.565200 ms (FindLiveObjects: 0.594700 ms CreateObjectMapping: 0.144100 ms MarkObjects: 2.763400 ms  DeleteObjects: 1.061900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002858 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.015 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5084 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 209.9 MB.
-System memory in use after: 207.8 MB.
-
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 5948.
-Total: 4.588900 ms (FindLiveObjects: 0.569600 ms CreateObjectMapping: 0.145600 ms MarkObjects: 2.735800 ms  DeleteObjects: 1.136600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002916 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.006 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.22 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5084 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 209.8 MB.
-System memory in use after: 207.7 MB.
-
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 5951.
-Total: 5.093900 ms (FindLiveObjects: 0.625900 ms CreateObjectMapping: 0.144600 ms MarkObjects: 3.047100 ms  DeleteObjects: 1.274800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002996 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 1.08 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -915,34 +198,28 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 [Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.031 seconds
+- Completed reload, in  1.028 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 1.19 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5084 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 209.8 MB.
-System memory in use after: 207.8 MB.
+Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 201.7 MB.
+System memory in use after: 200.3 MB.
 
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 5954.
-Total: 4.601100 ms (FindLiveObjects: 0.569700 ms CreateObjectMapping: 0.145600 ms MarkObjects: 2.729000 ms  DeleteObjects: 1.155900 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5685.
+Total: 4.178200 ms (FindLiveObjects: 0.599300 ms CreateObjectMapping: 0.140700 ms MarkObjects: 2.589500 ms  DeleteObjects: 0.847100 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 3162.648790 seconds.
-  path: Assets/Scripts/HexGrid/HexGridBehaviour.cs
-  artifactKey: Guid(896f0d3b31053bb4b98d7b1fe178e69e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/HexGrid/HexGridBehaviour.cs using Guid(896f0d3b31053bb4b98d7b1fe178e69e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e5dd8101f90515dfd2ebd035cf09b0a') in 0.013845 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002937 seconds.
+Registered in 0.002947 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -954,34 +231,70 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 [Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.015 seconds
+- Completed reload, in  1.025 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5084 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 209.8 MB.
-System memory in use after: 207.8 MB.
+Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 201.6 MB.
+System memory in use after: 200.2 MB.
 
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 5957.
-Total: 5.529700 ms (FindLiveObjects: 0.629200 ms CreateObjectMapping: 0.143800 ms MarkObjects: 3.563100 ms  DeleteObjects: 1.192600 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5688.
+Total: 4.125600 ms (FindLiveObjects: 0.574200 ms CreateObjectMapping: 0.156300 ms MarkObjects: 2.547900 ms  DeleteObjects: 0.846500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 203.680841 seconds.
+  Time since last request: 903.680579 seconds.
+  path: Assets/Prefabs/GameItems/Trees.prefab
+  artifactKey: Guid(5be905952f0d4154ea6fda6f98553318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameItems/Trees.prefab using Guid(5be905952f0d4154ea6fda6f98553318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'facec419d7989de7d40f833989ec262f') in 0.182092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.055496 seconds.
+  path: Assets/Materials/Shaders
+  artifactKey: Guid(afc9f2e9f991f414e884c1bd303078bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Shaders using Guid(afc9f2e9f991f414e884c1bd303078bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d9efb95243b5085ec162837de42b65f') in 0.006490 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.039232 seconds.
+  path: Assets/Materials/Shaders/Trees.shadergraph
+  artifactKey: Guid(1cd82de8ad13acb4c8c0e08fbfe5928f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Shaders/Trees.shadergraph using Guid(1cd82de8ad13acb4c8c0e08fbfe5928f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2feeb99ab13408d5d4944d9816b0d10') in 0.005502 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.755455 seconds.
   path: Assets/Prefabs/GameItems/House.prefab
   artifactKey: Guid(627622a22d0285644940ea98f65dc01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameItems/House.prefab using Guid(627622a22d0285644940ea98f65dc01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a857ce9c9fceaac8265a3668565f738e') in 0.154595 seconds 
+Start importing Assets/Prefabs/GameItems/House.prefab using Guid(627622a22d0285644940ea98f65dc01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4059d47e29e61826e52bb999f8aa6bba') in 0.016936 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 290.186306 seconds.
+  path: Assets/Materials/GroundMats/Gravel.mat
+  artifactKey: Guid(b384b1f0938ded048840534bd9a05d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/GroundMats/Gravel.mat using Guid(b384b1f0938ded048840534bd9a05d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be9d703a4927ba3b862fb6326f5d7118') in 0.037697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/BlenderModels/BlenderMats/GreenTop.mat
+  artifactKey: Guid(6e7f8edc1e115244ca48f7098e0a2552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BlenderModels/BlenderMats/GreenTop.mat using Guid(6e7f8edc1e115244ca48f7098e0a2552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a51d1de4e35214340002719eb4f2fd') in 0.042041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/BlenderModels/BlenderMats/Green.mat
+  artifactKey: Guid(ac5c3d7a3c04f4e41af115062a3170b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BlenderModels/BlenderMats/Green.mat using Guid(ac5c3d7a3c04f4e41af115062a3170b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7781143102cd4bdf69b8be84e59b6d4b') in 0.038642 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002963 seconds.
+Registered in 0.002884 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -993,58 +306,58 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 [Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.043 seconds
+- Completed reload, in  1.021 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5084 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 209.9 MB.
-System memory in use after: 207.9 MB.
+Unloading 5072 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 202.2 MB.
+System memory in use after: 200.8 MB.
 
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 5996.
-Total: 4.650500 ms (FindLiveObjects: 0.601800 ms CreateObjectMapping: 0.154900 ms MarkObjects: 2.769800 ms  DeleteObjects: 1.122900 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5759.
+Total: 4.259100 ms (FindLiveObjects: 0.546200 ms CreateObjectMapping: 0.138800 ms MarkObjects: 2.735600 ms  DeleteObjects: 0.837500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 424.977166 seconds.
-  path: Assets/Prefabs/GameItems/BuildingPrototype.prefab
-  artifactKey: Guid(680feafe94a1e8a4f8cbd36ff3ffeecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameItems/BuildingPrototype.prefab using Guid(680feafe94a1e8a4f8cbd36ff3ffeecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e220e1380f894dfb5f396e6a5f830f5e') in 0.197872 seconds 
+  Time since last request: 1265.324644 seconds.
+  path: Assets/TextMesh Pro/Sprites/EmojiOne.png
+  artifactKey: Guid(dffef66376be4fa480fb02b19edbe903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Sprites/EmojiOne.png using Guid(dffef66376be4fa480fb02b19edbe903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '314e6bf45b9f4895cb6b37f7f5ba15b5') in 0.081239 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/Prefabs/GameItems/Empty.prefab
-  artifactKey: Guid(bba116c18ee9c8c47abd7613c60473b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameItems/Empty.prefab using Guid(bba116c18ee9c8c47abd7613c60473b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '027afed62e3c99cf144341748b9efe93') in 0.008240 seconds 
+  Time since last request: 0.000250 seconds.
+  path: Assets/Textures/GravelNormal.png
+  artifactKey: Guid(cd44e85763f6e4942bc1aedb474c3236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/GravelNormal.png using Guid(cd44e85763f6e4942bc1aedb474c3236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66ae4c106e4753b97e4f5d86958caa36') in 0.015422 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.759517 seconds.
-  path: Assets/Prefabs/HexGrids/HexGrid.prefab
-  artifactKey: Guid(0c5c7d08fdfc2ad418aeed4b0aca5ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/HexGrids/HexGrid.prefab using Guid(0c5c7d08fdfc2ad418aeed4b0aca5ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) NullReferenceException: An instance of HexGridPropertiesManager is needed in the scene, but there is none.
-  at Singleton`1[T].get_Instance () [0x00042] in C:\UnityProjects\KrisMinion\KrisMinion\Assets\Scripts\Tools\Singleton.cs:18 
-  at HexGridBehaviour.OnValidate () [0x00001] in C:\UnityProjects\KrisMinion\KrisMinion\Assets\Scripts\HexGrid\HexGridBehaviour.cs:15 
-
-(Filename: Assets/Scripts/Tools/Singleton.cs Line: 18)
-
- -> (artifact id: '76e6449eff577680612ae3d70a72b939') in 0.018698 seconds 
+  Time since last request: 68.394487 seconds.
+  path: Assets/Textures/RampTexture.png
+  artifactKey: Guid(4328be2d304dfc34186eb77882f3e249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/RampTexture.png using Guid(4328be2d304dfc34186eb77882f3e249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a563547cbfe95fa45e2716a8fd63641') in 0.010268 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.547002 seconds.
-  path: Assets/Prefabs/HexGrids/HexRing.prefab
-  artifactKey: Guid(8d0b72ce60ba87942ade996f083b9291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/HexGrids/HexRing.prefab using Guid(8d0b72ce60ba87942ade996f083b9291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5784c01804888204135d48aff98831ea') in 0.008500 seconds 
+  Time since last request: 200.196228 seconds.
+  path: Assets/Textures/RampTexture2.png
+  artifactKey: Guid(45a0a9711eb5c6749829027d025117fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/RampTexture2.png using Guid(45a0a9711eb5c6749829027d025117fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdeef1a7724719300b2df55f95c86c85') in 0.009571 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.775357 seconds.
+  path: Assets/Textures/RampTexture2.png
+  artifactKey: Guid(45a0a9711eb5c6749829027d025117fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/RampTexture2.png using Guid(45a0a9711eb5c6749829027d025117fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ffb1682f71e7a24bd29f4bde5337253') in 0.009043 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002880 seconds.
+Registered in 0.003033 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\KrisMinion\KrisMinion\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\UnityProjects\CardsOfExpanding\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -1056,17 +369,64 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 [Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.044 seconds
+- Completed reload, in  1.046 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.52 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5084 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 210.3 MB.
-System memory in use after: 208.3 MB.
+Unloading 5076 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 204.9 MB.
+System memory in use after: 203.5 MB.
 
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 6035.
-Total: 4.639400 ms (FindLiveObjects: 0.638100 ms CreateObjectMapping: 0.144900 ms MarkObjects: 2.751700 ms  DeleteObjects: 1.104100 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 5843.
+Total: 5.328400 ms (FindLiveObjects: 0.694600 ms CreateObjectMapping: 0.174000 ms MarkObjects: 3.460500 ms  DeleteObjects: 0.998000 ms)
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+========================================================================
+Received Import Request.
+  Time since last request: 687.999041 seconds.
+  path: Assets/Textures/ramp8.png
+  artifactKey: Guid(15ab6f68adaee3d4e8e5b1fc6470526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ramp8.png using Guid(15ab6f68adaee3d4e8e5b1fc6470526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f2d6811dc79b74a1b03e6ef313df83d') in 0.046104 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.808385 seconds.
+  path: Assets/Textures/ramp8.png
+  artifactKey: Guid(15ab6f68adaee3d4e8e5b1fc6470526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ramp8.png using Guid(15ab6f68adaee3d4e8e5b1fc6470526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3127a4eb4ce094237cb0f16375e76d85') in 0.006267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.312779 seconds.
+  path: Assets/Textures/ramp8.png
+  artifactKey: Guid(15ab6f68adaee3d4e8e5b1fc6470526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ramp8.png using Guid(15ab6f68adaee3d4e8e5b1fc6470526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3caac36fbd8e5085fbadab0435154a04') in 0.006166 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.135442 seconds.
+  path: Assets/Textures/ramp8.png
+  artifactKey: Guid(15ab6f68adaee3d4e8e5b1fc6470526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/ramp8.png using Guid(15ab6f68adaee3d4e8e5b1fc6470526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f268f0e473f34bb51c2b1c5087e7d149') in 0.006548 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5505.777117 seconds.
+  path: Assets/BlenderModels/Berries.fbx
+  artifactKey: Guid(4a0bb0b29e23e9f4e9cf52074bccaa5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BlenderModels/Berries.fbx using Guid(4a0bb0b29e23e9f4e9cf52074bccaa5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb8e07fa3dfaca649ba98cdfe0901def') in 0.203197 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 339.528059 seconds.
+  path: Assets/BlenderModels/BlenderMats/Berries.mat
+  artifactKey: Guid(1ee9c9910234dac4db7dad80feb188a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BlenderModels/BlenderMats/Berries.mat using Guid(1ee9c9910234dac4db7dad80feb188a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a74d624d5cff45b3e0242c77bf8e9ce') in 0.022090 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/BlenderModels/BlenderMats/TreeGreen.mat
+  artifactKey: Guid(ac5c3d7a3c04f4e41af115062a3170b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BlenderModels/BlenderMats/TreeGreen.mat using Guid(ac5c3d7a3c04f4e41af115062a3170b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '387b1e5fafee7b25809cd4eb726c74c0') in 0.027638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/BlenderModels/BlenderMats/Roof.mat
+  artifactKey: Guid(9243ef07d06de1d46a9de43efa44b9a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BlenderModels/BlenderMats/Roof.mat using Guid(9243ef07d06de1d46a9de43efa44b9a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd9bea87b168e07d0a6a358b2d8a9ed7') in 0.012051 seconds 
