@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B02C9535-55B6-BCA6-889F-D5A2B10FE381}</ProjectGuid>
+    <ProjectGuid>{F44C6532-5C9A-4DB7-8F49-88431E579208}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\ShopManager.cs" />
     <Compile Include="Assets\Scripts\Data\GridDataInspector.cs" />
     <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
+    <Compile Include="Assets\Scripts\HexGrid\HexGridPropertiesManagerInspector.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

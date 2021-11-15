@@ -12,6 +12,10 @@ public class HexGridBehaviour : MonoBehaviour
     
     private void OnValidate()
     {
+        if (properties == null)
+            properties = new GridData.Properties();
+        if (buildingProperties == null)
+            buildingProperties = new BuildingsData.Properties();
         var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
         if (prop.Graphic != properties.Graphic)
             UnupdatedData = true;
@@ -22,10 +26,14 @@ public class HexGridBehaviour : MonoBehaviour
             UnupdatedData = true;
         }
     }
-
-    public void UpdateProperties()
+    public void UpdateProperties(bool forceUpdate = false)
     {
-        if (!UnupdatedData) return;
+        if (!UnupdatedData && !forceUpdate) return;
+        if (forceUpdate)
+        {
+            properties = new GridData.Properties();
+            buildingProperties = new BuildingsData.Properties();
+        }
         var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
         UpdateGroundTexture(prop);
         UpdateGraphicObject(prop);
@@ -101,7 +109,7 @@ public class HexGridBehaviour : MonoBehaviour
         if (go == null) return;
         var newGraphic = Instantiate(go, transform);
         newGraphic.transform.position = transform.position;
-        newGraphic.transform.rotation = transform.rotation;
-        //newGraphic.transform.rotation = transform.rotation * Quaternion.Euler(0, 30f * UnityEngine.Random.Range(0,11),0);
+        //newGraphic.transform.rotation = transform.rotation;
+        newGraphic.transform.rotation = transform.rotation * Quaternion.Euler(0, 60f * UnityEngine.Random.Range(0,5),0);
     }
 }
