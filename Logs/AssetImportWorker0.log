@@ -430,3 +430,4 @@ Received Import Request.
   path: Assets/BlenderModels/BlenderMats/Roof.mat
   artifactKey: Guid(9243ef07d06de1d46a9de43efa44b9a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/BlenderModels/BlenderMats/Roof.mat using Guid(9243ef07d06de1d46a9de43efa44b9a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd9bea87b168e07d0a6a358b2d8a9ed7') in 0.012051 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
