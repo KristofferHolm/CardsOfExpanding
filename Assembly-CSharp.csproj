@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\ShopManager.cs" />
     <Compile Include="Assets\Scripts\Data\GridDataInspector.cs" />
     <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
+    <Compile Include="Assets\Scripts\HexGrid\HexGridPropertiesManagerInspector.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

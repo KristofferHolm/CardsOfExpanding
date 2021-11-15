@@ -86,7 +86,7 @@ Material:
     m_Ints: []
     m_Floats:
     - AddToPos: 0.51
-    - PositionY: 2
+    - PositionY: 5.67
     - _Add: 3.47
     - _AlphaClip: 0
     - _Blend: 0.92

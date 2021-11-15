@@ -26,10 +26,14 @@ public class HexGridBehaviour : MonoBehaviour
             UnupdatedData = true;
         }
     }
-
-    public void UpdateProperties()
+    public void UpdateProperties(bool forceUpdate = false)
     {
-        if (!UnupdatedData) return;
+        if (!UnupdatedData && !forceUpdate) return;
+        if (forceUpdate)
+        {
+            properties = new GridData.Properties();
+            buildingProperties = new BuildingsData.Properties();
+        }
         var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
         UpdateGroundTexture(prop);
         UpdateGraphicObject(prop);

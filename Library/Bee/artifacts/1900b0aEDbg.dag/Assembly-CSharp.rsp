@@ -345,6 +345,7 @@
 "Assets/Scripts/HexGrid/HexGridCreator.cs"
 "Assets/Scripts/HexGrid/HexGridCreatorInspector.cs"
 "Assets/Scripts/HexGrid/HexGridPropertiesManager.cs"
+"Assets/Scripts/HexGrid/HexGridPropertiesManagerInspector.cs"
 "Assets/Scripts/Inputs/PlayerController.cs"
 "Assets/Scripts/MoveBackgroundWithCamera.cs"
 "Assets/Scripts/MoveCamera.cs"
