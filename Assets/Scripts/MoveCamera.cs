@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,10 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
     Vector2 direction;
     Vector2 currentDir;
     float zoom;
+    public Action<Vector3> CameraMovedDistance;
     public void Update()
     {
+        Vector3 StartPos = transform.position;
         currentDir = Vector2.Lerp(currentDir, direction,0.1f);
         transform.position += new Vector3(currentDir.x * speed * Time.deltaTime, 0, currentDir.y * speed * Time.deltaTime);
         transform.position = ClampCameraInsideSpace(transform.position);
@@ -26,11 +29,14 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
         }
         if (Mathf.Abs(zoom) > 0.1f)
         {
+            //todo: get the camera by class
             transform.position += transform.GetChild(0).forward * zoom * Time.deltaTime;
             zoom *= 0.9f / (1 + Time.deltaTime);
         }
         else
             zoom = 0f;
+        CameraMovedDistance.Invoke(transform.position - StartPos);
+
     }
     public Vector3 ClampCameraInsideSpace(Vector3 pos, float minX = -25, float maxX = 25, float minZ = -40, float maxZ = 20)
     {

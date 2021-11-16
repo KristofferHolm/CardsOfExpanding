@@ -21,3 +21,7 @@ MonoBehaviour:
     Id: 1
     Properties:
       Graphic: {fileID: 2346015385588325867, guid: 627622a22d0285644940ea98f65dc01a, type: 3}
+  - Name: Road
+    Id: 2
+    Properties:
+      Graphic: {fileID: 0}
