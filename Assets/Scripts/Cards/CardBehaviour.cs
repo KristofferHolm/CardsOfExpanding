@@ -6,20 +6,9 @@ using TMPro;
 public class CardBehaviour : MonoBehaviour
 {
     List<TextMeshPro> texts;
-    public Transform TextParent;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform TextParent;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void SetText(string[] textsToSet)
+    protected void SetText(string[] textsToSet)
     {
         if (!TextParent)
         {
