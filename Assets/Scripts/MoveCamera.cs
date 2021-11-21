@@ -71,5 +71,13 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
 
     public void OnLook(InputAction.CallbackContext context)    {    }
 
-    public void OnFire(InputAction.CallbackContext context)    {    }
+    bool openBook = false;
+    public void OnFire(InputAction.CallbackContext context)    
+    {
+            openBook = !openBook;
+            if(openBook)
+                BookManager.Instance.OpenBook();
+            else
+                BookManager.Instance.CloseBook();
+    }
 }

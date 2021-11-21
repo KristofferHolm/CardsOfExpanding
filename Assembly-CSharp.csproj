@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Data\BlueprintCard.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridBehaviour.cs" />
     <Compile Include="Assets\Scripts\Cards\CardBehaviour.cs" />
     <Compile Include="Assets\Samples\Input System\1.0.2\Custom Binding Composite\CustomComposite.cs" />
@@ -65,21 +66,21 @@
     <Compile Include="Assets\Scripts\HexGrid\HexGridPropertiesManagerInspector.cs" />
     <Compile Include="Assets\Scripts\Inputs\PlayerController.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridBehaviourInspector.cs" />
+    <Compile Include="Assets\Scripts\Tools\Tools.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\MoveBackgroundWithCamera.cs" />
     <Compile Include="Assets\Scripts\Data\GridData.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Cards\ActionCardBehaviour.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridCreatorInspector.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridCreator.cs" />
     <Compile Include="Assets\Scripts\ShopManager.cs" />
     <Compile Include="Assets\Scripts\Data\GridDataInspector.cs" />
-    <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardManager.cs" />
-    <Compile Include="Assets\Scripts\Tools\Tools.cs" />
-    <Compile Include="Assets\Scripts\Data\ActionCard.cs" />
-    <Compile Include="Assets\Scripts\Data\BlueprintCard.cs" />
-    <Compile Include="Assets\Scripts\Cards\ActionCardBehaviour.cs" />
     <Compile Include="Assets\Scripts\Cards\BlueprintCardBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
+    <Compile Include="Assets\Scripts\Data\ActionCard.cs" />
+    <Compile Include="Assets\Scripts\BookManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

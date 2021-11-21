@@ -7,7 +7,6 @@ public class CardBehaviour : MonoBehaviour
 {
     List<TextMeshPro> texts;
     [SerializeField] private Transform TextParent;
-
     protected void SetText(string[] textsToSet)
     {
         if (!TextParent)

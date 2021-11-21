@@ -39,13 +39,13 @@ public class HexGridBehaviour : MonoBehaviour
         UpdateGraphicObject(prop);
         UnupdatedData = false;
     }
-    public void UpdateType(GridData.GridType type)
-    {
-        Type = type;
-        var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
-        UpdateGroundTexture(prop);
-        UpdateGraphicObject(prop);
-    }
+    //public void UpdateType(GridData.GridType type)
+    //{
+    //    Type = type;
+    //    var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
+    //    UpdateGroundTexture(prop);
+    //    UpdateGraphicObject(prop);
+    //}
 
     public void UpdateGroundTexture(GridData.Properties prop)
     {
@@ -71,7 +71,7 @@ public class HexGridBehaviour : MonoBehaviour
 
         if (HexGridPropertiesManager.Instance.TryGetProperty(BuildingId, out var getprop))
         {
-            if (getprop.Graphic == buildingProperties.Graphic) return;    
+            if (getprop.Graphic == buildingProperties.Graphic) return;
             prefabToSpawn = getprop.Graphic;
         }
         else

@@ -46,19 +46,20 @@ public class CardManager : Singleton<CardManager>
     }
     public GameObject CreateCard(Card cardData)
     {
-        GameObject card; 
+        GameObject card = new GameObject();
         if (cardData is ActionCard)
         {
             card = Instantiate(ActionCardPrefab);
+            card.GetComponent<ActionCardBehaviour>().SetCardData(cardData as ActionCard);
         }
         else if (cardData is BlueprintCard)
         {
             card = Instantiate(BlueprintCardPrefab);
+            card.GetComponent<BlueprintCardBehaviour>().SetCardData(cardData as BlueprintCard);
         }
-        card.transform.position = CardCreationPosition.position;
-        card.transform.rotation = CardCreationPosition.rotation;
-        card.GetComponent<CardBehaviour>().SetCardData(cardData);
-        return card.gameObject;
+        card.transform.SetPositionAndRotation(CardCreationPosition.position, CardCreationPosition.rotation);
+       
+        return card;
     }
     public void GainCard(CardBehaviour card, CardPlace place)
     {

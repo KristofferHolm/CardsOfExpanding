@@ -25,3 +25,7 @@ MonoBehaviour:
     Id: 2
     Properties:
       Graphic: {fileID: 0}
+  - Name: TownHall
+    Id: 3
+    Properties:
+      Graphic: {fileID: 2346015385588325867, guid: b9655e2e3ef8a334c81a56501dd60a54, type: 3}
