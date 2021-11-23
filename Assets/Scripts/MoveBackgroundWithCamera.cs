@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class MoveBackgroundWithCamera : MonoBehaviour
 {
-    PlayerController controls;
     Vector3 startPos;
     [SerializeField]  MoveCamera moveCamera;
 
@@ -33,22 +32,4 @@ public class MoveBackgroundWithCamera : MonoBehaviour
         moveCamera.CameraMovedDistance -= UpdatePos;
     }
  
-    public void Update()
-    {
-        //direction = currentDir - moveCamera.transform.position;
-        //transform.position = startPos + direction;
-        //currentDir = moveCamera.transform.position;
-
-        //direction.y = -zoom;
-        //currentDir = Vector3.Lerp(currentDir, direction, 0.05f);
-        //transform.position = startPos - currentDir * range;
-        //if (Mathf.Abs(zoom) > 0.1f)
-        //{
-        //    zoom *= 0.9f / (1 + Time.deltaTime);
-        //}
-        //else
-        //    zoom = 0f;
-    }
-
-  
 }

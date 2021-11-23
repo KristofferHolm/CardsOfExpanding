@@ -19,5 +19,6 @@ public class BlueprintCardBehaviour : CardBehaviour
             cardData.TurnsToBuild.ToString(),
         };
         SetText(texts);
+        SetIcon(cardData.CardIcon);
     }
 }

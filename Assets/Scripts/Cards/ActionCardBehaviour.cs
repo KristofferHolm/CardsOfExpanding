@@ -18,5 +18,6 @@ public class ActionCardBehaviour : CardBehaviour
             cardData.pollutionCost.ToString()
         };
         SetText(texts);
+        SetIcon(cardData.CardIcon);
     }
 }

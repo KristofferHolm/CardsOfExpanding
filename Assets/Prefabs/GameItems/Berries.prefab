@@ -178,7 +178,6 @@ GameObject:
   - component: {fileID: 1519461180048869997}
   - component: {fileID: 1519461180048869999}
   - component: {fileID: 1519461180048869996}
-  - component: {fileID: 1519461180048869998}
   m_Layer: 0
   m_Name: HexRing
   m_TagString: Untagged
@@ -861,20 +860,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1519461180048869998
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519461180048869992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &2292121296961155958
 GameObject:
   m_ObjectHideFlags: 0

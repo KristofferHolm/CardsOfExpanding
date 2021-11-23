@@ -7,6 +7,12 @@ public class CardBehaviour : MonoBehaviour
 {
     List<TextMeshPro> texts;
     [SerializeField] private Transform TextParent;
+    [SerializeField] private MeshRenderer Icon;
+    protected void SetIcon(Texture icon)
+    {
+        Icon.material.mainTexture = icon;
+    }
+
     protected void SetText(string[] textsToSet)
     {
         if (!TextParent)

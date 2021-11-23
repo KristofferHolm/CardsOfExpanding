@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Tools\Singleton.cs" />
     <Compile Include="Assets\Scripts\Data\Card.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridPropertiesManager.cs" />
+    <Compile Include="Assets\Scripts\BookManager.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridPropertiesManagerInspector.cs" />
     <Compile Include="Assets\Scripts\Inputs\PlayerController.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridBehaviourInspector.cs" />
@@ -80,7 +81,7 @@
     <Compile Include="Assets\Scripts\Cards\BlueprintCardBehaviour.cs" />
     <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
     <Compile Include="Assets\Scripts\Data\ActionCard.cs" />
-    <Compile Include="Assets\Scripts\BookManager.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardBehaviourInspector.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
