@@ -5,6 +5,7 @@ using UnityEngine;
 public class HexGridBehaviour : MonoBehaviour
 {
     public GridData.GridType Type = GridData.GridType.Undecided;
+    public int SetStartBuildingId = -1;
     private GridData.Properties properties;
     private BuildingsData.Building building;
     [HideInInspector]    public bool UnupdatedData;
@@ -43,11 +44,20 @@ public class HexGridBehaviour : MonoBehaviour
     #region Graphic of the grid and management of which building it is
     private void OnValidate()
     {
+       
+
         if (properties == null)
             properties = new GridData.Properties();
         if (building == null)
             building = new BuildingsData.Building();
+       
         if (!HexGridPropertiesManager.IsInstantiated) return;
+        if (SetStartBuildingId > 0)
+        {
+            Type = GridData.GridType.Building;
+            if(HexGridPropertiesManager.Instance.TryGetBuildingData(SetStartBuildingId, out var newbuilding));
+                building = newbuilding;
+        }
         var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
         if (prop.Graphic != properties.Graphic)
             UnupdatedData = true;

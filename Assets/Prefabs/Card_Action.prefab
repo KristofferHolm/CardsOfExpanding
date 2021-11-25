@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 795739633139346531}
   - component: {fileID: 731275829854417202}
   - component: {fileID: 7148359268106581522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XPBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2076594456196169455}
   - component: {fileID: 4919333203183878958}
   - component: {fileID: 1951040825510318464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 655311439069398719}
   - component: {fileID: 6591744947246695943}
   - component: {fileID: 5433928682412633983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CardBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 1736783545311378129}
   - component: {fileID: 5397676982560989488}
   - component: {fileID: 6904820729850933575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 1412498569531090169}
   - component: {fileID: 7605143624216970005}
   - component: {fileID: 8310488479498240290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pillar.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3181920982991215041}
   - component: {fileID: 8047007323994745379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card_Action
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 3463890155814945323}
   - component: {fileID: 2967700727285391690}
   - component: {fileID: 2314228991685052147}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 1304419729591536493}
   - component: {fileID: 8271868858612162189}
   - component: {fileID: 5854348068283822117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlackSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6610527171860289344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 7405345942771046035}
   - component: {fileID: 2553650389671114409}
   - component: {fileID: 7615518905401024764}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 4651162575705186407}
   - component: {fileID: 7166050058753919406}
   - component: {fileID: 243567937944663852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PollutionCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 2645268335895368907}
   - component: {fileID: 7307583510330531896}
   - component: {fileID: 2227606070975755214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: 6645005933780982147}
   - component: {fileID: 4969706590797662832}
   - component: {fileID: 3193496615786577032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WorkerCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 4898433657790216987}
   - component: {fileID: 1966690541711447667}
   - component: {fileID: 7855375664181825930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CardPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1431,7 +1431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3643243338039350783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: 6212630109522083545}
   - component: {fileID: 4437237713707029986}
   - component: {fileID: 446987264601649637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1643,7 +1643,7 @@ GameObject:
   - component: {fileID: 8787997383986667190}
   - component: {fileID: 228749754627230449}
   - component: {fileID: 9034815478826984319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LevelBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

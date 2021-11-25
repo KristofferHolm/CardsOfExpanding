@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Cards\CardBehaviour.cs" />
     <Compile Include="Assets\Samples\Input System\1.0.2\Custom Binding Composite\CustomComposite.cs" />
     <Compile Include="Assets\Scripts\Cards\CardBehaviourInspector.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Cards\CardManager_Inspector.cs" />
     <Compile Include="Assets\Scripts\Tools\Singleton.cs" />
     <Compile Include="Assets\Scripts\Data\Card.cs" />
@@ -84,9 +85,9 @@
     <Compile Include="Assets\BookButton.cs" />
     <Compile Include="Assets\Scripts\Cards\BlueprintCardBehaviour.cs" />
     <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
-    <Compile Include="Assets\Scripts\Data\ActionCard.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Cards\StarterDeck_ScriptableObject.cs" />
+    <Compile Include="Assets\Scripts\Data\ActionCard.cs" />
+    <Compile Include="Assets\Scripts\InventoryManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
 {
-    public void ActivateBuildingAbility(HexGridBehaviour hexGrid)
+    public bool ActivateBuildingAbility(HexGridBehaviour hexGrid)
     {
-        GetAction(hexGrid);
+        return GetAction(hexGrid);
     }
 
-    private void GetAction(HexGridBehaviour hexGrid)
+    private bool GetAction(HexGridBehaviour hexGrid)
     {
         //todo> all the actions;
         switch (hexGrid.BuildingId)
@@ -20,7 +20,7 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
             case 2:
                 break;
             case 3:
-                TownHall(hexGrid);
+                return TownHall(hexGrid);
                 break;
             case 4:
                 Tent();
@@ -28,18 +28,35 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
             case 5:
             case 6:
             default:
+                return false;
                 break;
         }
+        return false;
     }
 
+    bool CoalMine()
+    {
+        if (InventoryManager.Instance.PayTheCost(0, 1, 0, 1))
+        {
+            CardManager.Instance.DrawCard(2);
+            InventoryManager.Instance.Pollution++;
+            return true;
+        }
+        return false;
+    }
+    bool LumberMill()
+    {
+        return true;
+    }
     private void Tent()
     {
         
     }
 
-    private void TownHall(HexGridBehaviour hexGrid)
+    private bool TownHall(HexGridBehaviour hexGrid)
     {
-        CardManager.Instance.CreateStartDeck();
+        CardManager.Instance.CreateStarterDeck();
         hexGrid.AbilityUsed(true);
+        return true;
     }
 }

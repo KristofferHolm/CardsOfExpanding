@@ -13,25 +13,19 @@ public class BookManager : Singleton<BookManager>
     [SerializeField] GameObject ActivateButton;
     private bool isOpen = false;
     private string rightText, leftText;
+    private bool buttonIsActive = false;
     HexGridBehaviour currentHexGrid;
     private void OnValidate()
     {
         if(!bookAnimator)
             bookAnimator = GetComponent<Animator>();
     }
-    private void Start()
-    {
-        
-    }
-    private void Update()
-    {
-       
-    }
 
     public void OnBookUpdateText()
     {
         RightPage.text = rightText;
         LeftPage.text = leftText;
+        ActivateButton.SetActive(buttonIsActive);
     }
 
     public void OpenBook(HexGridBehaviour hexGrid)
@@ -47,13 +41,14 @@ public class BookManager : Singleton<BookManager>
             leftText = buildingData.Name;
             //set text to building
             rightText = buildingData.Properties.BookText;
-            ActivateButton.SetActive(buildingData.Properties.ActiveAbility);
+            buttonIsActive = buildingData.Properties.ActiveAbility;
         }
         else
         {
             currentHexGrid = hexGrid;
+            rightText = "";
             leftText = "Hexgrid Type: " + hexGrid.Type.ToString();
-            ActivateButton.SetActive(false);
+            buttonIsActive = false;
         }
 
         if (isOpen)
@@ -71,8 +66,8 @@ public class BookManager : Singleton<BookManager>
         bookAnimator.SetBool("Open", false);
         isOpen = false;
     }
-    internal void ActivateAbility()
+    internal bool ActivateAbility()
     {
-        BuildingAbilityManager.Instance.ActivateBuildingAbility(currentHexGrid);
+        return BuildingAbilityManager.Instance.ActivateBuildingAbility(currentHexGrid);
     }
 }

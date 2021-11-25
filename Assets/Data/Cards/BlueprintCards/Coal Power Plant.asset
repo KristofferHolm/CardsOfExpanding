@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Coal Power Plant
   m_EditorClassIdentifier: 
   Title: Coal Power Plant
-  Description: 'Daily: (Cost 1 stone, 1 worker) +2 cards'
+  Description: 'Daily: (Cost 1 stone, 1 worker) +2 cards + 1 pollution'
   CardIcon: {fileID: 2800000, guid: 5356cb561193e2e45bcc33a88e2e4e65, type: 3}
   BuildingId: 6
   WoodCost: 4

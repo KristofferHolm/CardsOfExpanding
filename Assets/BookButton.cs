@@ -6,6 +6,18 @@ public class BookButton : MonoBehaviour
 {
     public void Activate()
     {
-        BookManager.Instance.ActivateAbility();
+        StartCoroutine(AnimateButtonClick(BookManager.Instance.ActivateAbility()));
+    }
+    IEnumerator AnimateButtonClick(bool activate)
+    {
+        if (activate)
+        {
+            //animate click
+        }
+        else
+        {
+            //animate not working like shake
+        }
+        yield return null;
     }
 }
