@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,9 +7,13 @@ using UnityEngine;
 public class BookManager : Singleton<BookManager>
 {
     [SerializeField] Animator bookAnimator;
-    public TextMeshPro RightPage, LeftPage;
+
+
+    [SerializeField] TextMeshPro RightPage, LeftPage;
+    [SerializeField] GameObject ActivateButton;
     private bool isOpen = false;
     private string rightText, leftText;
+    HexGridBehaviour currentHexGrid;
     private void OnValidate()
     {
         if(!bookAnimator)
@@ -29,10 +34,28 @@ public class BookManager : Singleton<BookManager>
         LeftPage.text = leftText;
     }
 
-    public void OpenBook(string leftPage, string rightPage)
+    public void OpenBook(HexGridBehaviour hexGrid)
     {
-        rightText = rightPage;
-        leftText = leftPage;
+        if (hexGrid.Type == GridData.GridType.Building)
+        {
+            if (!HexGridPropertiesManager.Instance.TryGetBuildingData(hexGrid.BuildingId, out var buildingData))
+            {
+                Debug.LogError("building ID of " + hexGrid.BuildingId + " could not be found");
+                return;
+            }
+            currentHexGrid = hexGrid;
+            leftText = buildingData.Name;
+            //set text to building
+            rightText = buildingData.Properties.BookText;
+            ActivateButton.SetActive(buildingData.Properties.ActiveAbility);
+        }
+        else
+        {
+            currentHexGrid = hexGrid;
+            leftText = "Hexgrid Type: " + hexGrid.Type.ToString();
+            ActivateButton.SetActive(false);
+        }
+
         if (isOpen)
         {
             bookAnimator.SetTrigger("Flip");
@@ -47,5 +70,9 @@ public class BookManager : Singleton<BookManager>
     {
         bookAnimator.SetBool("Open", false);
         isOpen = false;
+    }
+    internal void ActivateAbility()
+    {
+        BuildingAbilityManager.Instance.ActivateBuildingAbility(currentHexGrid);
     }
 }

@@ -22,7 +22,7 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
     float zoom;
     public Action<Vector3> CameraMovedDistance;
     public Camera MainCamera, CardCamera;
-    public LayerMask CardMask, Default;
+    public LayerMask CardMask, Default, BookMask;
     Vector2 mousePosition;
     bool draggingCard = false;
     Action<bool> OnCardDraggin;
@@ -70,8 +70,13 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
     {
         //we check cardcamera first because it is alway infront of the main camera.
         Ray ray = CardCamera.ScreenPointToRay(mousePosition);
-
-        if (Physics.Raycast(ray, out var hit, 10000, CardMask))
+        
+        if (Physics.Raycast(ray, out var book, 10000, BookMask))
+        {
+            book.transform.GetComponent<BookButton>();
+            return null;
+        }
+        else if (Physics.Raycast(ray, out var hit, 10000, CardMask))
         {
             return hit.transform.GetComponent<CardBehaviour>();
         }
@@ -150,7 +155,7 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
 
     private void GetHexGridInfo(HexGridBehaviour hexGrid)
     {
-        BookManager.Instance.OpenBook("Hexgrid Type: " + hexGrid.Type.ToString(), "Building ID: " + hexGrid.BuildingId.ToString());
+        BookManager.Instance.OpenBook(hexGrid);
     }
 
     public void OnRightClick(InputAction.CallbackContext context)

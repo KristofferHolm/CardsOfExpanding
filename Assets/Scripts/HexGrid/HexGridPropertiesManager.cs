@@ -21,6 +21,20 @@ public class HexGridPropertiesManager : Singleton<HexGridPropertiesManager>
         }
         return false;
     }
+    public bool TryGetBuildingData(int id, out BuildingsData.Building buildingsData)
+    {
+        buildingsData = null;
+        foreach (var item in BuildingsData.Database)
+        {
+            if (item.Id == id)
+            {
+                buildingsData = item;
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public BuildingsData.Properties GetProperty(int id)
     {

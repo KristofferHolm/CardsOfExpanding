@@ -9,6 +9,20 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     static T _instance;
 
+    public static bool IsInstantiated
+    {
+        get
+        {
+            if (_instance != null)
+                return true;
+            else
+            {
+                Debug.LogWarning("A singleton is not instantiated, but something is trying to reach it");
+                return false;
+            }
+        }
+    }
+
     public static T Instance
     {
         get

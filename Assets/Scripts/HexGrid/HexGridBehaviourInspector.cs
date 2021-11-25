@@ -30,19 +30,4 @@ public class HexGridBehaviourInspector : Editor
         }
         return false;
     }
-
-    //[CanEditMultipleObjects]
-    //void ChangeType(GridData.GridType type)
-    //{
-    //    var targetsList = new List<HexGridBehaviour>();
-    //    foreach (var item in targets)
-    //    {
-    //        if (item.GetType() == typeof(HexGridBehaviour))
-    //            targetsList.Add(item as HexGridBehaviour);
-    //    }
-    //    foreach (var item in targetsList)
-    //    {
-    //        item.UpdateType(type);
-    //    }
-    //}
 }

@@ -22,7 +22,12 @@ public class BuildingsData: ScriptableObject
         //graphical properties
         public GameObject Graphic;
 
-        // game properties
-        //tbc
+        [TextArea(0, 125)]
+        public string BookText;
+        public bool ActiveAbility, 
+            Daily;//when the ability can be used multiple times.
+
+        [HideInInspector] public bool AbilityUsed;
+        //passiveability (we check the passive ability elsewhere)
     }
 }

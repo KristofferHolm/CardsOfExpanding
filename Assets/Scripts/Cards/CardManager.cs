@@ -5,6 +5,8 @@ using System;
 
 public class CardManager : Singleton<CardManager>
 {
+    public Card TestCard;
+    [Space(5)]
     public Transform HandTransform;
     public Transform DiscardPileTransform;
     public Transform DeckTransform;
@@ -46,20 +48,22 @@ public class CardManager : Singleton<CardManager>
     }
     public GameObject CreateCard(Card cardData)
     {
-        GameObject card = new GameObject();
+        GameObject card;
         if (cardData is ActionCard)
         {
             card = Instantiate(ActionCardPrefab);
             card.GetComponent<ActionCardBehaviour>().SetCardData(cardData as ActionCard);
+            card.transform.SetPositionAndRotation(CardCreationPosition.position, CardCreationPosition.rotation);
+            return card;
         }
         else if (cardData is BlueprintCard)
         {
             card = Instantiate(BlueprintCardPrefab);
             card.GetComponent<BlueprintCardBehaviour>().SetCardData(cardData as BlueprintCard);
+            card.transform.SetPositionAndRotation(CardCreationPosition.position, CardCreationPosition.rotation);
+            return card;
         }
-        card.transform.SetPositionAndRotation(CardCreationPosition.position, CardCreationPosition.rotation);
-       
-        return card;
+        return null;
     }
     public void GainCard(CardBehaviour card, CardPlace place)
     {
@@ -113,5 +117,16 @@ public class CardManager : Singleton<CardManager>
             default:
                 return new Stack<CardBehaviour>();
         }
+    }
+    public void CreateStartDeck()
+    {
+        
+    }
+
+    public void GenerateTestCard()
+    {
+        var card = CreateCard(TestCard);
+
+        card.transform.SetPositionAndRotation(new Vector3(0, 10, 0), Quaternion.identity);
     }
 }

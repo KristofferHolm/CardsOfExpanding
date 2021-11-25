@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1bce7137e676f4c9ec286e961bc03d, type: 3}
+  m_Name: Road
+  m_EditorClassIdentifier: 
+  Title: Road
+  Description: 'You can build a road on any Plane Tile adjacent to other roads or
+    buidlings.
+
+    You can build buildings on a road.'
+  CardIcon: {fileID: 2800000, guid: 5356cb561193e2e45bcc33a88e2e4e65, type: 3}
+  BuildingId: 2
+  WoodCost: 1
+  StoneCost: 0
+  FoodCost: 0
+  CoinCost: 0
+  TurnsToBuild: 1
+  GivesCard: []

@@ -6,46 +6,73 @@ public class HexGridBehaviour : MonoBehaviour
 {
     public GridData.GridType Type = GridData.GridType.Undecided;
     private GridData.Properties properties;
-    public int BuildingId;
-    private BuildingsData.Properties buildingProperties;
+    private BuildingsData.Building building;
     [HideInInspector]    public bool UnupdatedData;
-    
+    public int BuildingId
+    {
+        get
+        {
+            return building.Id;
+        }
+    }
+
+
+
+    #region Handeling the abilities of building
+
+    public void AbilityUsed(bool used)
+    {
+        building.Properties.AbilityUsed = used;
+    }
+    public void Build(BuildingsData.Building newBuilding)
+    {
+        Type = GridData.GridType.Building;
+        building = newBuilding;
+        if (building.Properties.Daily)
+            GameManager.Instance.OnNewTurn += () => AbilityUsed(false);
+        UpdateProperties();
+    }
+
+    #endregion
+
+    private void Start()
+    {
+        OnValidate();
+    }
+
+    #region Graphic of the grid and management of which building it is
     private void OnValidate()
     {
         if (properties == null)
             properties = new GridData.Properties();
-        if (buildingProperties == null)
-            buildingProperties = new BuildingsData.Properties();
+        if (building == null)
+            building = new BuildingsData.Building();
+        if (!HexGridPropertiesManager.IsInstantiated) return;
         var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
         if (prop.Graphic != properties.Graphic)
             UnupdatedData = true;
         else if (prop.GroundType != properties.GroundType)
             UnupdatedData = true;
-        else if (Type == GridData.GridType.Building && HexGridPropertiesManager.Instance.GetProperty(BuildingId).Graphic != buildingProperties.Graphic)
+        else if (Type == GridData.GridType.Building && HexGridPropertiesManager.Instance.GetProperty(BuildingId).Graphic != building.Properties.Graphic)
         {
             UnupdatedData = true;
         }
     }
+  
     public void UpdateProperties(bool forceUpdate = false)
     {
         if (!UnupdatedData && !forceUpdate) return;
         if (forceUpdate)
         {
             properties = new GridData.Properties();
-            buildingProperties = new BuildingsData.Properties();
+            building = new BuildingsData.Building();
         }
         var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
         UpdateGroundTexture(prop);
         UpdateGraphicObject(prop);
         UnupdatedData = false;
     }
-    //public void UpdateType(GridData.GridType type)
-    //{
-    //    Type = type;
-    //    var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
-    //    UpdateGroundTexture(prop);
-    //    UpdateGraphicObject(prop);
-    //}
+
 
     public void UpdateGroundTexture(GridData.Properties prop)
     {
@@ -71,7 +98,7 @@ public class HexGridBehaviour : MonoBehaviour
 
         if (HexGridPropertiesManager.Instance.TryGetProperty(BuildingId, out var getprop))
         {
-            if (getprop.Graphic == buildingProperties.Graphic) return;
+            if (getprop.Graphic == building.Properties.Graphic) return;
             prefabToSpawn = getprop.Graphic;
         }
         else
@@ -81,7 +108,7 @@ public class HexGridBehaviour : MonoBehaviour
             prefabToSpawn.GetComponentInChildren<TMPro.TextMeshPro>().text = "Building ID: \n" + BuildingId;
         }
         InstantiateNewGraphic(prefabToSpawn);
-        buildingProperties.Graphic = prefabToSpawn;
+        building.Properties.Graphic = prefabToSpawn;
     }
 
     private void InstantiateNewGraphic(GameObject go)
@@ -112,4 +139,5 @@ public class HexGridBehaviour : MonoBehaviour
         //newGraphic.transform.rotation = transform.rotation;
         newGraphic.transform.rotation = transform.rotation * Quaternion.Euler(0, 60f * UnityEngine.Random.Range(0,5),0);
     }
+    #endregion
 }

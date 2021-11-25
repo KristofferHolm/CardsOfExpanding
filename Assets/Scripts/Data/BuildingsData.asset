@@ -17,15 +17,106 @@ MonoBehaviour:
     Id: 0
     Properties:
       Graphic: {fileID: 0}
+      BookText: 
+      ActiveAbility: 0
+      Daily: 0
+      AbilityUsed: 0
   - Name: House
     Id: 1
     Properties:
       Graphic: {fileID: 2346015385588325867, guid: 627622a22d0285644940ea98f65dc01a, type: 3}
+      BookText: +1 worker
+      ActiveAbility: 0
+      Daily: 0
+      AbilityUsed: 0
   - Name: Road
     Id: 2
     Properties:
       Graphic: {fileID: 0}
+      BookText: 
+      ActiveAbility: 0
+      Daily: 0
+      AbilityUsed: 0
   - Name: TownHall
     Id: 3
     Properties:
       Graphic: {fileID: 2346015385588325867, guid: b9655e2e3ef8a334c81a56501dd60a54, type: 3}
+      BookText: 'Townhall,
+
+        +3 worker
+
+        ___________________
+
+        Gain
+        starter deck'
+      ActiveAbility: 1
+      Daily: 0
+      AbilityUsed: 0
+  - Name: Harvesting Tent
+    Id: 4
+    Properties:
+      Graphic: {fileID: 2346015385588325867, guid: 1cad865da8aa9914cb8596590e9fefb8, type: 3}
+      BookText: 'Daily: (cost 1 Worker) Harvest field for 1 resource
+
+
+'
+      ActiveAbility: 1
+      Daily: 0
+      AbilityUsed: 0
+  - Name: Mine
+    Id: 5
+    Properties:
+      Graphic: {fileID: 0}
+      BookText: 'Daily: (Cost 1 worker) Harvest 3 Stone from one field that is adjecent
+        or has a Tunnel connected to it.'
+      ActiveAbility: 1
+      Daily: 1
+      AbilityUsed: 0
+  - Name: Coal Power Plant
+    Id: 6
+    Properties:
+      Graphic: {fileID: 0}
+      BookText: 'Daily: (Cost 1 Stone, 1 Worker) +2 cards
+
+'
+      ActiveAbility: 1
+      Daily: 1
+      AbilityUsed: 0
+  - Name: Lumber Mill
+    Id: 7
+    Properties:
+      Graphic: {fileID: 0}
+      BookText: 'Daily: (Cost 1 worker) Harvest 3 Trees from one field in 1an area
+        around all Lumber Mills
+
+'
+      ActiveAbility: 1
+      Daily: 1
+      AbilityUsed: 0
+  - Name: Fishing Harbour
+    Id: 8
+    Properties:
+      Graphic: {fileID: 0}
+      BookText: 'Daily: (Cost 1 worker) Harvest 3 Food from one field in an area
+        around all Fishing Harbours
+
+'
+      ActiveAbility: 1
+      Daily: 1
+      AbilityUsed: 0
+  - Name: Stone Houses
+    Id: 9
+    Properties:
+      Graphic: {fileID: 2346015385588325867, guid: 627622a22d0285644940ea98f65dc01a, type: 3}
+      BookText: + 3 worker
+      ActiveAbility: 0
+      Daily: 0
+      AbilityUsed: 0
+  - Name: Steel Houses
+    Id: 10
+    Properties:
+      Graphic: {fileID: 2346015385588325867, guid: 627622a22d0285644940ea98f65dc01a, type: 3}
+      BookText: + 6 workers
+      ActiveAbility: 0
+      Daily: 0
+      AbilityUsed: 0

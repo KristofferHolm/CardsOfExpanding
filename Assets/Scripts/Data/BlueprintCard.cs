@@ -6,6 +6,7 @@ using UnityEngine;
 public class BlueprintCard : Card
 {
     public int BuildingId;
+   
     public int WoodCost, StoneCost, FoodCost, CoinCost, TurnsToBuild;
     public Card[] GivesCard;
 }

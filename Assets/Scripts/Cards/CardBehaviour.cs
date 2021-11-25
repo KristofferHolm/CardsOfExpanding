@@ -10,7 +10,7 @@ public class CardBehaviour : MonoBehaviour
     [SerializeField] private MeshRenderer Icon;
     protected void SetIcon(Texture icon)
     {
-        Icon.material.mainTexture = icon;
+        Icon.sharedMaterial.mainTexture = icon;
     }
 
     protected void SetText(string[] textsToSet)
@@ -22,6 +22,7 @@ public class CardBehaviour : MonoBehaviour
         }
         if (texts == null)
         {
+            texts = new List<TextMeshPro>();
             foreach (var tmp in TextParent.GetComponentsInChildren<TextMeshPro>())
             {
                 texts.Add(tmp);
