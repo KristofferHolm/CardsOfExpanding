@@ -5,10 +5,39 @@ using UnityEngine;
 
 public class HexGridPropertiesManager : Singleton<HexGridPropertiesManager>
 {
-    public GridData GridData;
-    public BuildingsData BuildingsData;
+    private static string buildingDataPath = "BuildingsData";
+    private static string gridDataPath = "GridData";
+    private static GridData _gridData;
+    public static GridData GridData
+    {
+        get
+        {
+            if (_gridData == null)
+                _gridData = Resources.Load(gridDataPath) as GridData;
+            return _gridData;
+        }
+        set
+        {
+            _gridData = value;
+        }
+    }
+    private static BuildingsData _buildingsData;
+    public static BuildingsData BuildingsData
+    {
+        get
+        {
+            if (_buildingsData == null)
+                _buildingsData = Resources.Load(buildingDataPath) as BuildingsData;
+            return _buildingsData;
+        }
+        set
+        {
+            _buildingsData = value;
+        }
+    }
+    
 
-    public bool TryGetProperty(int id, out BuildingsData.Properties properties)
+    public static bool TryGetProperty(int id, out BuildingsData.Properties properties)
     {
         properties = null;
         foreach (var item in BuildingsData.Database)
@@ -21,7 +50,7 @@ public class HexGridPropertiesManager : Singleton<HexGridPropertiesManager>
         }
         return false;
     }
-    public bool TryGetBuildingData(int id, out BuildingsData.Building buildingsData)
+    public static bool TryGetBuildingData(int id, out BuildingsData.Building buildingsData)
     {
         buildingsData = null;
         foreach (var item in BuildingsData.Database)
@@ -36,7 +65,7 @@ public class HexGridPropertiesManager : Singleton<HexGridPropertiesManager>
     }
 
 
-    public BuildingsData.Properties GetProperty(int id)
+    public static BuildingsData.Properties GetProperty(int id)
     {
         foreach (var item in BuildingsData.Database)
         {
@@ -46,7 +75,7 @@ public class HexGridPropertiesManager : Singleton<HexGridPropertiesManager>
         return null;
     }
 
-    public bool TryGetProperty(GridData.GridType key, out GridData.Properties properties)
+    public static bool TryGetProperty(GridData.GridType key, out GridData.Properties properties)
     {
         properties = null;
         foreach (var item in GridData.GridDatas)
@@ -60,7 +89,7 @@ public class HexGridPropertiesManager : Singleton<HexGridPropertiesManager>
         return false;
     }
 
-    public GridData.Properties GetProperty(GridData.GridType key)
+    public static GridData.Properties GetProperty(GridData.GridType key)
     {
         foreach (var item in GridData.GridDatas)
         {

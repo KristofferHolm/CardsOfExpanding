@@ -17,11 +17,23 @@ public class HexGridBehaviour : MonoBehaviour
         }
     }
 
-
-
     #region Handeling the abilities of building
+    
+    public bool GetAbilityUsed
+    {
+        get
+        {
+            if (building.Properties != null)
+                return building.Properties.AbilityUsed;
+            else
+            {
+                Debug.LogError("no properties of this hexagrid", gameObject);
+                return false;
+            }
+        }
+    }
 
-    public void AbilityUsed(bool used)
+    public void SetAbilityUsed(bool used)
     {
         building.Properties.AbilityUsed = used;
     }
@@ -30,7 +42,7 @@ public class HexGridBehaviour : MonoBehaviour
         Type = GridData.GridType.Building;
         building = newBuilding;
         if (building.Properties.Daily)
-            GameManager.Instance.OnNewTurn += () => AbilityUsed(false);
+            GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
         UpdateProperties();
     }
 
@@ -39,31 +51,31 @@ public class HexGridBehaviour : MonoBehaviour
     private void Start()
     {
         OnValidate();
+        if(building.Properties != null && building.Properties.ActiveAbility)
+            building.Properties.AbilityUsed = false;
     }
 
     #region Graphic of the grid and management of which building it is
     private void OnValidate()
     {
-       
-
         if (properties == null)
             properties = new GridData.Properties();
         if (building == null)
             building = new BuildingsData.Building();
        
-        if (!HexGridPropertiesManager.IsInstantiated) return;
-        if (SetStartBuildingId > 0)
+        //if (!HexGridPropertiesManager.IsInstantiated) return;
+        var prop = HexGridPropertiesManager.GetProperty(Type);
+        if (Type != GridData.GridType.Building)
+            SetStartBuildingId = -1;
+        if (HexGridPropertiesManager.TryGetBuildingData(SetStartBuildingId, out var newbuilding))
         {
-            Type = GridData.GridType.Building;
-            if(HexGridPropertiesManager.Instance.TryGetBuildingData(SetStartBuildingId, out var newbuilding));
-                building = newbuilding;
+            building = newbuilding;
         }
-        var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
         if (prop.Graphic != properties.Graphic)
             UnupdatedData = true;
         else if (prop.GroundType != properties.GroundType)
             UnupdatedData = true;
-        else if (Type == GridData.GridType.Building && HexGridPropertiesManager.Instance.GetProperty(BuildingId).Graphic != building.Properties.Graphic)
+        else if (Type == GridData.GridType.Building && HexGridPropertiesManager.GetProperty(BuildingId).Graphic != building.Properties.Graphic)
         {
             UnupdatedData = true;
         }
@@ -77,7 +89,7 @@ public class HexGridBehaviour : MonoBehaviour
             properties = new GridData.Properties();
             building = new BuildingsData.Building();
         }
-        var prop = HexGridPropertiesManager.Instance.GetProperty(Type);
+        var prop = HexGridPropertiesManager.GetProperty(Type);
         UpdateGroundTexture(prop);
         UpdateGraphicObject(prop);
         UnupdatedData = false;
@@ -106,17 +118,18 @@ public class HexGridBehaviour : MonoBehaviour
     {
         GameObject prefabToSpawn;
 
-        if (HexGridPropertiesManager.Instance.TryGetProperty(BuildingId, out var getprop))
-        {
-            if (getprop.Graphic == building.Properties.Graphic) return;
-            prefabToSpawn = getprop.Graphic;
-        }
-        else
+        HexGridPropertiesManager.TryGetProperty(BuildingId, out var getprop);
+        //if (getprop.Graphic == building.Properties.Graphic)
+        //        return;
+        if (getprop.Graphic == null)
         {
             //prototype graphic
             prefabToSpawn = prop.Graphic;
             prefabToSpawn.GetComponentInChildren<TMPro.TextMeshPro>().text = "Building ID: \n" + BuildingId;
         }
+        else 
+            prefabToSpawn = getprop.Graphic;
+        
         InstantiateNewGraphic(prefabToSpawn);
         building.Properties.Graphic = prefabToSpawn;
     }

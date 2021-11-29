@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
  /// also controls left and right click interaction, could maybe be moved at some point
  /// But MoveCamera is more like PlayerController god script 😀
  /// </summary>
-public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
+public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
 {
     PlayerController controls;
     float speed = 0;
@@ -73,7 +73,10 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
         
         if (Physics.Raycast(ray, out var book, 10000, BookMask))
         {
-            book.transform.GetComponent<BookButton>();
+            if (book.transform.TryGetComponent<BookButton>(out var bookButton))
+            {
+                return bookButton;
+            }
             return null;
         }
         else if (Physics.Raycast(ray, out var hit, 10000, CardMask))
@@ -90,6 +93,13 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
             }
         }
         return null;
+    }
+
+    public bool MouseIsOver(Transform obj)
+    {
+        Ray ray = CardCamera.ScreenPointToRay(mousePosition);
+        Physics.Raycast(ray, out var hit, 10000);
+        return hit.transform == obj;
     }
 
     public void OnEnable()
@@ -131,16 +141,23 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
 
         if (context.started)
         {
-            if (CheckMouseHit() is CardBehaviour)
+            var startHit = CheckMouseHit();
+            if (startHit is CardBehaviour)
                 OnCardDraggin.Invoke(true);
+            if (startHit is BookButton)
+            {
+                var button = startHit as BookButton;
+                button.ClickDown();
+            }
         }
-        else if (context.canceled)
+        else if (context.canceled && draggingCard)
             OnCardDraggin.Invoke(false);
 
 
 
-        if (!context.performed) return;
-            var hit = CheckMouseHit();
+        if (!context.canceled) return;
+
+        var hit = CheckMouseHit();
         if (hit is null)
             return;
         if (hit is HexGridBehaviour)
@@ -150,6 +167,10 @@ public class MoveCamera : MonoBehaviour, PlayerController.IPlayerActions
         else if (hit is CardBehaviour)
         {
 
+        }
+        else if (hit is BookButton)
+        {
+            hit.gameObject.SendMessage("Activate");
         }
     }
 

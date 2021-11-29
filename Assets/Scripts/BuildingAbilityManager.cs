@@ -21,7 +21,6 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
                 break;
             case 3:
                 return TownHall(hexGrid);
-                break;
             case 4:
                 Tent();
                 break;
@@ -29,7 +28,6 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
             case 6:
             default:
                 return false;
-                break;
         }
         return false;
     }
@@ -55,8 +53,10 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
 
     private bool TownHall(HexGridBehaviour hexGrid)
     {
+        if (hexGrid.GetAbilityUsed)
+            return false;
         CardManager.Instance.CreateStarterDeck();
-        hexGrid.AbilityUsed(true);
+        hexGrid.SetAbilityUsed(true);
         return true;
     }
 }

@@ -24,8 +24,8 @@ public class CardManager : Singleton<CardManager>
         Trash
     }
 
-    float drawCardCooldown = 1f;
-    private float drawingCardTime = 0f;
+    float drawCardCooldown = 0f;
+    private float drawingCardTime = 1f;
 
     private Stack<CardBehaviour> Deck, DiscardPile, Hand, TrashPile;
     private int drawCards = 0;
@@ -42,8 +42,8 @@ public class CardManager : Singleton<CardManager>
     }
     public void Update()
     {
-        drawCardCooldown = Mathf.Clamp(drawCardCooldown + Time.deltaTime, 0, drawCardCooldown);
-        if (drawCards <= 0 && drawingCardTime >= drawCardCooldown)
+        drawCardCooldown = Mathf.Clamp(drawCardCooldown + Time.deltaTime, 0, drawingCardTime);
+        if (drawCards > 0 && drawingCardTime == drawCardCooldown)
         {
             drawCardCooldown = 0;
             drawCards--;
@@ -98,6 +98,22 @@ public class CardManager : Singleton<CardManager>
     IEnumerator DrawCardAnimation()
     {
         var card = Deck.Pop();
+        float t = 0f;
+        float timeToGetThere = 0.5f;
+        var originPos = card.transform.position;
+        var originRot = card.transform.rotation;
+        var posToGoTo = new Vector3(CardCreationPosition.position.x, CardCreationPosition.position.y + 300f, CardCreationPosition.position.z);
+        var rotToGoTo = CardCreationPosition.rotation * Quaternion.Euler(0, 180, 0);
+        while (t < timeToGetThere)
+        {
+            card.transform.SetPositionAndRotation(Vector3.Lerp(originPos, posToGoTo, t / timeToGetThere),
+                Quaternion.LerpUnclamped(originRot, rotToGoTo, RotateReveal.Evaluate(t / timeToGetThere)));
+            t += Time.deltaTime;
+            yield return null;
+        }
+        card.transform.SetPositionAndRotation(posToGoTo, rotToGoTo);
+        Hand.Push(card);
+        UpdateCardsInHandPositions();
         yield return null;
     }
 
@@ -124,28 +140,87 @@ public class CardManager : Singleton<CardManager>
     }
     public void CreateStarterDeck()
     {
-        CreateCardsWithAnimation(StarterDeck.StarterCards);
+        CreateCardsWithAnimation(StarterDeck.StarterCards, ()=> DrawCard(5));
     }
-    public void CreateCardsWithAnimation(List<Card> Cards)
+    public void CreateCardsWithAnimation(List<Card> Cards, Action callback = null)
     {
-        StartCoroutine(CreateMultipleCardsAnimation(Cards));
+        StartCoroutine(CreateMultipleCardsAnimation(Cards, callback));
     }
-    public void CreateCardsWithAnimation(Card card)
+    public void CreateCardsWithAnimation(Card card, Action callback = null)
     {
         var list = new List<Card>();
         list.Add(card);
-        StartCoroutine(CreateMultipleCardsAnimation(list));
+        StartCoroutine(CreateMultipleCardsAnimation(list, callback));
     }
 
-    IEnumerator CreateMultipleCardsAnimation(List<Card> Cards)
+    IEnumerator CreateMultipleCardsAnimation(List<Card> Cards, Action callback)
     {
         foreach (var item in Cards)
         {
             var card = CreateCard(item);
             yield return CreateAnimation(card);
             GainCard(card.GetComponent<CardBehaviour>(), CardPlace.Deck);
-            MoveCardToDeck(card);
+            StartCoroutine(MoveCardToDeck(card));
         }
+        //we wait the amount of seconds MoveCardToDeck to time it all correct
+        yield return new WaitForSeconds(0.5f);
+        callback.Invoke();
+        yield return null;
+    }
+
+    class CardFromToPos
+    {
+        public GameObject obj;
+        public Quaternion originRot, rotToGoTo;
+        public Vector3 originPos, posToGoTo;
+        public void SetInfo(GameObject card, Quaternion rotTo, Vector3 posTo)
+        {
+            this.obj = card;
+            originPos = card.transform.position;
+            originRot = card.transform.rotation;
+            rotToGoTo = rotTo;
+            posToGoTo = posTo;
+        }
+    }
+
+    void UpdateCardsInHandPositions(Action callback = null)
+    {
+        List<CardFromToPos> positions = new List<CardFromToPos>();
+        var maxCards = Hand.Count;
+        float HalfCards = maxCards * 0.5f;
+        int i = 0;
+        foreach (var item in Hand)
+        {
+            var animation = new CardFromToPos();
+            var pos = new Vector3((HalfCards - i) * 1.5f, 0, 0);
+            animation.SetInfo(item.gameObject, HandTransform.rotation * Quaternion.Euler(4,90,90), HandTransform.position + pos);
+            positions.Add(animation);
+            i++;
+        }
+        StartCoroutine(MoveCardsInHand(positions,callback));
+
+    }
+    IEnumerator MoveCardsInHand(List<CardFromToPos> animations, Action callback)
+    {
+        float t = 0f;
+        float timeToGetThere = 0.5f;
+      
+        while (t < timeToGetThere)
+        {
+            foreach (var card in animations)
+            {
+                card.obj.transform.SetPositionAndRotation(Vector3.Lerp(card.originPos, card.posToGoTo, t / timeToGetThere),
+                    Quaternion.Lerp(card.originRot, card.rotToGoTo, t / timeToGetThere));
+            }
+            t += Time.deltaTime;
+            yield return null;
+        }
+        foreach (var card in animations)
+        {
+            card.obj.transform.SetPositionAndRotation(Vector3.Lerp(card.originPos, card.posToGoTo, t / timeToGetThere),
+                Quaternion.Lerp(card.originRot, card.rotToGoTo, t / timeToGetThere));
+        }
+        callback?.Invoke();
         yield return null;
     }
 
@@ -165,13 +240,14 @@ public class CardManager : Singleton<CardManager>
         card.transform.position = posToGoTo;
         t = 0;
         // we end on 180, but we need to overshoot for animation value
-        var rotationToGoTo = card.transform.rotation * Quaternion.Euler(0, 180+60, 0);
+        var rotationToGoTo = card.transform.rotation * Quaternion.Euler(0, 180, 0);
         while (t < timeToRotate)
         {
-            card.transform.rotation = Quaternion.Lerp(CardCreationPosition.rotation, rotationToGoTo, RotateReveal.Evaluate(t / timeToRotate));
+            card.transform.rotation = Quaternion.LerpUnclamped(CardCreationPosition.rotation, rotationToGoTo, RotateReveal.Evaluate(t / timeToRotate));
             t += Time.deltaTime;
             yield return null;
         }
+        card.transform.rotation = rotationToGoTo;
         yield return null;
     }
 
@@ -187,6 +263,7 @@ public class CardManager : Singleton<CardManager>
             t += Time.deltaTime;
             yield return null;
         }
+        
         yield return null;
     }
     public void GenerateTestCard()

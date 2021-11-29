@@ -27,7 +27,8 @@ public class BuildingsData: ScriptableObject
         public bool ActiveAbility, 
             Daily;//when the ability can be used multiple times.
 
-        [HideInInspector] public bool AbilityUsed;
+        //[HideInInspector] 
+        public bool AbilityUsed = false;
         //passiveability (we check the passive ability elsewhere)
     }
 }

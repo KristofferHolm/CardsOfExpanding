@@ -32,7 +32,7 @@ MonoBehaviour:
   - Name: Road
     Id: 2
     Properties:
-      Graphic: {fileID: 0}
+      Graphic: {fileID: 2346015385588325867, guid: bba116c18ee9c8c47abd7613c60473b4, type: 3}
       BookText: 
       ActiveAbility: 0
       Daily: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
         starter deck'
       ActiveAbility: 1
       Daily: 0
-      AbilityUsed: 0
+      AbilityUsed: 1
   - Name: Harvesting Tent
     Id: 4
     Properties:

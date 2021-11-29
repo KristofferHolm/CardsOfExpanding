@@ -4,20 +4,62 @@ using UnityEngine;
 
 public class BookButton : MonoBehaviour
 {
-    public void Activate()
+    Vector3 originPos;
+
+   
+    private void Start()
     {
-        StartCoroutine(AnimateButtonClick(BookManager.Instance.ActivateAbility()));
+        originPos = transform.localPosition;
     }
-    IEnumerator AnimateButtonClick(bool activate)
+    public void ClickDown()
     {
+        StartCoroutine(MouseOver());
+        
+    }
+  
+    protected IEnumerator MouseOver()
+    {
+        transform.localPosition = originPos + Vector3.forward * 0.05f;
+        while (MoveCamera.Instance.MouseIsOver(transform))
+        {
+            yield return null;
+        }
+        transform.localPosition = originPos;
+    }
+
+    protected IEnumerator AnimateButtonClick(bool activate)
+    {
+        float t = 0;
+        float timeToAnimate = 0.25f;
+        GetComponent<BoxCollider>().enabled = false;
+      
         if (activate)
         {
-            //animate click
+            while (t < timeToAnimate)
+            {
+                var d = Mathf.Sin((t / timeToAnimate) * Mathf.PI);
+                transform.localPosition= originPos + Vector3.forward * d * 0.2f;
+                t += Time.deltaTime;
+                yield return null;
+            }
+            transform.localPosition = originPos;
         }
         else
         {
-            //animate not working like shake
+            while (t < timeToAnimate)
+            {
+                var d = Mathf.Sin((t*3 / timeToAnimate) * Mathf.PI);
+                transform.localPosition = originPos - Vector3.up * d * 0.3f;
+                t += Time.deltaTime;
+                yield return null;
+            }
+            transform.localPosition = originPos;
         }
+        GetComponent<BoxCollider>().enabled = true;
         yield return null;
     }
+}
+public interface IBookButton
+{
+    void Activate();
 }

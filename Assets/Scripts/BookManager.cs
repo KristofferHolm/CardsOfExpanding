@@ -30,9 +30,10 @@ public class BookManager : Singleton<BookManager>
 
     public void OpenBook(HexGridBehaviour hexGrid)
     {
+        if (currentHexGrid != null && hexGrid.gameObject.GetInstanceID() == currentHexGrid.gameObject.GetInstanceID()) return;
         if (hexGrid.Type == GridData.GridType.Building)
         {
-            if (!HexGridPropertiesManager.Instance.TryGetBuildingData(hexGrid.BuildingId, out var buildingData))
+            if (!HexGridPropertiesManager.TryGetBuildingData(hexGrid.BuildingId, out var buildingData))
             {
                 Debug.LogError("building ID of " + hexGrid.BuildingId + " could not be found");
                 return;
