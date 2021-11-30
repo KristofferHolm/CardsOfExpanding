@@ -955,6 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3181920982991215041}
   - component: {fileID: 832001787865591068}
+  - component: {fileID: 271053330875422075}
   m_Layer: 6
   m_Name: Card_Blueprint
   m_TagString: Untagged
@@ -992,6 +993,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextParent: {fileID: 6610527171860289344}
   Icon: {fileID: 7432508450487803324}
+--- !u!65 &271053330875422075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2838293515576656763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.087943494, y: 3.1281319, z: 2.0640657}
+  m_Center: {x: 0.020267874, y: 0.5877695, z: 0.005066991}
 --- !u!1 &3364255248849124397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,7 +1979,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Build a road
+  m_text: 'sample text sample text sample text sample text sample text sample text
+    sample text sample text sample text sample text sample text sample text sample
+    text sample text sample text sample text sample text sample text sample text
+    sample text sample text sample text sample text sample text '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1992,11 +2009,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.38
+  m_fontSize: 0.85
   m_fontSizeBase: 1.38
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 1
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0.43
   m_fontSizeMax: 2
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -2010,7 +2027,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -2028,7 +2045,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.3655063, y: 0.22211048, z: -0.3781796, w: 0.18879494}
+  m_margin: {x: -0.3655063, y: 0.22211048, z: -0.3781796, w: -0.014321476}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0

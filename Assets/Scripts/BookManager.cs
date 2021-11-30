@@ -30,7 +30,7 @@ public class BookManager : Singleton<BookManager>
 
     public void OpenBook(HexGridBehaviour hexGrid)
     {
-        if (currentHexGrid != null && hexGrid.gameObject.GetInstanceID() == currentHexGrid.gameObject.GetInstanceID()) return;
+        if (isOpen && currentHexGrid != null && hexGrid.gameObject.GetInstanceID() == currentHexGrid.gameObject.GetInstanceID()) return;
         if (hexGrid.Type == GridData.GridType.Building)
         {
             if (!HexGridPropertiesManager.TryGetBuildingData(hexGrid.BuildingId, out var buildingData))

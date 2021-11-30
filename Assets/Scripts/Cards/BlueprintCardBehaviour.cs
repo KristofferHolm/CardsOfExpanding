@@ -5,7 +5,13 @@ using UnityEngine;
 public class BlueprintCardBehaviour : CardBehaviour
 {
     BlueprintCard cardData;
-
+    public int GetBuildingId
+    {
+        get
+        {
+            return cardData.BuildingId;
+        }
+    }
     public void SetCardData(BlueprintCard data)
     {
         cardData = data;

@@ -23,10 +23,12 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
     public Action<Vector3> CameraMovedDistance;
     public Camera MainCamera, CardCamera;
     public LayerMask CardMask, Default, BookMask;
+    private CardBehaviour cardInHand;
+    private HexGridBehaviour currentHightlightedHexGrid;
     Vector2 mousePosition;
     bool draggingCard = false;
-    Action<bool> OnCardDraggin;
-
+    public Action<bool> OnCardDraggin;
+    public GameObject GridHighlight;
     public void Update()
     {
         if(startAcceleration)
@@ -143,7 +145,15 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
         {
             var startHit = CheckMouseHit();
             if (startHit is CardBehaviour)
+            {
+                var card = startHit as CardBehaviour;
+                card.IsbeingDragged = true;
+                cardInHand = card;
                 OnCardDraggin.Invoke(true);
+                Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition), out var mousepos, 100, Default);
+                CardManager.Instance.MousePos.position = mousepos.point;
+                BookManager.Instance.CloseBook();
+            }
             if (startHit is BookButton)
             {
                 var button = startHit as BookButton;
@@ -151,8 +161,22 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
             }
         }
         else if (context.canceled && draggingCard)
+        {
+            //TODO where is the card, and what to do with it?
+            if (cardInHand.IsReadyToBeSpend)
+            {
+                if (cardInHand is BlueprintCardBehaviour)
+                {
+                    var blueprint = cardInHand as BlueprintCardBehaviour;
+                    HexGridPropertiesManager.TryGetBuildingData(blueprint.GetBuildingId, out var buildingData);
+                    currentHightlightedHexGrid.Build(buildingData);
+                }
+                CardManager.Instance.DiscardCard(cardInHand);
+            }
+            cardInHand.IsbeingDragged = false;
             OnCardDraggin.Invoke(false);
-
+            return;
+        }
 
 
         if (!context.canceled) return;
@@ -166,7 +190,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
         }
         else if (hit is CardBehaviour)
         {
-
+            //should we even do something here?
         }
         else if (hit is BookButton)
         {
@@ -194,9 +218,19 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
     public void OnMousePos(InputAction.CallbackContext context)
     {
         mousePosition = context.ReadValue<Vector2>();
-        if (draggingCard)
+        if (Physics.Raycast(MainCamera.ScreenPointToRay(mousePosition), out var gridHit, 10000, Default))
         {
-            //move card with mouse
+            GridHighlight.SetActive(true);
+            if (gridHit.transform.TryGetComponent<HexGridBehaviour>(out var hexGridBehaviour))
+                currentHightlightedHexGrid = hexGridBehaviour;
+            GridHighlight.transform.SetPositionAndRotation(currentHightlightedHexGrid.transform.position, currentHightlightedHexGrid.transform.rotation);
+        }
+        else
+            GridHighlight.SetActive(false);
+        if (draggingCard && cardInHand != null)
+        {
+            Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition),out var hit, 100,Default);
+            CardManager.Instance.MousePos.position = hit.point;
         }
     }
 }
