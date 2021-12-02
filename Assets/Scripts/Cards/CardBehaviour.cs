@@ -8,6 +8,7 @@ public class CardBehaviour : MonoBehaviour
     List<TextMeshPro> texts;
     [SerializeField] private Transform TextParent;
     [SerializeField] private MeshRenderer Icon;
+    BoxCollider boxCollider;
     private bool _isReadyToBeSpend;
     public bool IsReadyToBeSpend
     {
@@ -37,8 +38,25 @@ public class CardBehaviour : MonoBehaviour
         }
     }
 
+    public bool IsInHand
+    {
+        get
+        {
+            return CardManager.Instance.Hand.Contains(this);
+        }
+    }
+
+    public BoxCollider Collider { get 
+        {
+            if (boxCollider == null)
+                boxCollider = GetComponent<BoxCollider>();
+            return boxCollider; 
+        } set => boxCollider = value; }
+
     private void Update()
     {
+        // TODO OPTIMIZATION
+        Collider.enabled = IsInHand;
         if (!_isBeingDragged)
         {
             ReturnToNormalSize();
@@ -56,11 +74,11 @@ public class CardBehaviour : MonoBehaviour
             transform.localScale = new Vector3(1, 1, Mathf.Clamp01(transform.localScale.z + Time.deltaTime * 4f));
         }
     }
-    private void CheckIfCardIsReadyToBeSpendable(bool spendable)
+    protected virtual void CheckIfCardIsReadyToBeSpendable(bool spendable)
     {
         if (_isReadyToBeSpend == spendable) return;
         //TODO: Check if the player has enough resources
-
+        //InventoryManager.Instance.PayTheCost(
 
         _isReadyToBeSpend = spendable;
         CardManager.Instance.OnCardBeingSpendable?.Invoke(this,spendable);
@@ -90,5 +108,13 @@ public class CardBehaviour : MonoBehaviour
         {
             texts[i].text = textsToSet[i]; 
         }
+    }
+    /// <summary>
+    /// When Discarding the card
+    /// </summary>
+    public void ResetCard()
+    {
+        _isReadyToBeSpend = false;
+        //_isBeingDragged = false;
     }
 }

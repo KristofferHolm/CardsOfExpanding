@@ -32,19 +32,23 @@ public class CardManager : Singleton<CardManager>
     private float drawingCardTime = 1f;
 
     public List<CardBehaviour> Hand;
-    private Stack<CardBehaviour> Deck, DiscardPile, TrashPile;
+    private List<CardBehaviour> Deck, DiscardPile, TrashPile;
     private int drawCards = 0;
     private bool cardBeingDragged;
+    Coroutine updatePositionsInHand;
+
+
+
     private void Start()
     {
         if (Deck == null)
-            Deck = new Stack<CardBehaviour>();
+            Deck = new List<CardBehaviour>();
         if (DiscardPile == null)
-            DiscardPile = new Stack<CardBehaviour>();
+            DiscardPile = new List<CardBehaviour>();
         if (Hand == null)
             Hand = new List<CardBehaviour>();
         if (TrashPile == null)
-            TrashPile = new Stack<CardBehaviour>();
+            TrashPile = new List<CardBehaviour>();
         MoveCamera.Instance.OnCardDraggin += OnCardBeingDragged;
         OnCardBeingSpendable += CardBeingSpendable;
     }
@@ -116,17 +120,17 @@ public class CardManager : Singleton<CardManager>
         switch (place)
         {
             case CardPlace.Deck:
-                Deck.Push(card);
+                Deck.Add(card);
                 Shuffle(CardPlace.Deck);
                 break;
             case CardPlace.Hand:
                 Hand.Add(card);
                 break;
             case CardPlace.Discard:
-                DiscardPile.Push(card);
+                DiscardPile.Add(card);
                 break;
             case CardPlace.Trash:
-                TrashPile.Push(card);
+                TrashPile.Add(card);
                 break;
             default:
                 break;
@@ -138,7 +142,17 @@ public class CardManager : Singleton<CardManager>
     }
     IEnumerator DrawCardAnimation(float speedMultiplier = 1, Action callback = null)
     {
-        var card = Deck.Pop();
+        if (Deck.Count <= 0)
+        {
+            //Shuffle discards into deck
+            while (DiscardPile.Count > 0)
+            {
+                yield return ReturnDiscardToDeck(Pop(DiscardPile));
+            }
+        }
+        var card = Pop(Deck);
+        if (card == null)
+            yield break;
         float t = 0f;
         if (speedMultiplier <= 1)
             speedMultiplier = 1;
@@ -162,9 +176,20 @@ public class CardManager : Singleton<CardManager>
         UpdateCardsInHandPositions();
     }
 
+    private CardBehaviour Pop(List<CardBehaviour> pile)
+    {
+        if (pile.Count == 0)
+            return null;
+        int index = pile.Count - 1;
+        var card = pile[index];
+        pile.RemoveAt(index);
+        return card;
+    }
+
     public void Shuffle(CardPlace place)
     {
-        Tools.ShuffleStack(GetStackByCardPlace(place));
+        //TODO Shuffle animation
+        GetStackByCardPlace(place).ShuffleList();
     }
     public Transform GetTransformByCardPlace(CardPlace place)
     {
@@ -182,26 +207,30 @@ public class CardManager : Singleton<CardManager>
                 return transform;
         }
     }
-    public Stack<CardBehaviour> GetStackByCardPlace(CardPlace place)
+    public List<CardBehaviour> GetStackByCardPlace(CardPlace place)
     {
         switch (place)
         {
             case CardPlace.Deck:
                 return Deck;
             case CardPlace.Hand:
-                Debug.Log("you can't get the hand as a stack, returning null");
-                return new Stack<CardBehaviour>();
+                return Hand;
             case CardPlace.Discard:
                 return DiscardPile;
             case CardPlace.Trash:
                 return TrashPile;
             default:
-                return new Stack<CardBehaviour>();
+                return new List<CardBehaviour>();
         }
     }
     public void CreateStarterDeck()
     {
-        CreateCardsWithAnimation(StarterDeck.StarterCards, ()=> DrawCard(5), 3f);
+        CreateCardsWithAnimation(StarterDeck.StarterCards, ()=>
+        {
+            DrawCard(5);
+            GameManager.Instance.OnStartGame?.Invoke();
+        }, 3f);
+       
     }
     public void CreateCardsWithAnimation(List<Card> Cards, Action callback = null, float timeMultiplier =1)
     {
@@ -259,7 +288,6 @@ public class CardManager : Singleton<CardManager>
         {
             if (list1[i].gameObject.GetInstanceID() != list2[i].gameObject.GetInstanceID())
             {
-                Debug.Log("They are not equal");
                 return false;
             }
         }
@@ -287,8 +315,9 @@ public class CardManager : Singleton<CardManager>
             positions.Add(animation);
             i++;
         }
-        StopCoroutine(MoveCardsInHand(positions,callback));
-        StartCoroutine(MoveCardsInHand(positions,callback));
+        if(updatePositionsInHand != null)
+            StopCoroutine(updatePositionsInHand);
+        updatePositionsInHand = StartCoroutine(MoveCardsInHand(positions,callback));
     }
 
     IEnumerator MoveCardsInHand(List<CardFromToPos> animations, Action callback)
@@ -361,7 +390,8 @@ public class CardManager : Singleton<CardManager>
             t += Time.deltaTime;
             yield return null;
         }
-        
+        card.transform.SetPositionAndRotation(Vector3.Lerp(startPos, endPos, 1), Quaternion.Lerp(startRot, endRot, 1));
+
         yield return null;
     }
     /// <summary>
@@ -371,6 +401,14 @@ public class CardManager : Singleton<CardManager>
     {
         Hand.Remove(card);
         StartCoroutine(MoveCardToDestination(card.gameObject, CardPlace.Discard, 1));
+        card.ResetCard();
+        DiscardPile.Add(card);
+    }
+    IEnumerator ReturnDiscardToDeck(CardBehaviour card)
+    {
+        DiscardPile.Remove(card);
+        yield return MoveCardToDestination(card.gameObject, CardPlace.Deck, 3f);
+        Deck.Add(card);
     }
 
     public void GenerateTestCard()
