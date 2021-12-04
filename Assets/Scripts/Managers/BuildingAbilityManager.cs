@@ -34,7 +34,7 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
 
     bool CoalMine()
     {
-        if (InventoryManager.Instance.PayTheCost(0, 1, 0, 1))
+        if (InventoryManager.Instance.PayTheCost(0, 1, 0, 1,true))
         {
             CardManager.Instance.DrawCard(2);
             InventoryManager.Instance.Pollution++;

@@ -9,7 +9,7 @@ public class CardBehaviour : MonoBehaviour
     [SerializeField] private Transform TextParent;
     [SerializeField] private MeshRenderer Icon;
     BoxCollider boxCollider;
-    private bool _isReadyToBeSpend;
+    protected bool _isReadyToBeSpend;
     public bool IsReadyToBeSpend
     {
         get
@@ -76,13 +76,14 @@ public class CardBehaviour : MonoBehaviour
     }
     protected virtual void CheckIfCardIsReadyToBeSpendable(bool spendable)
     {
-        if (_isReadyToBeSpend == spendable) return;
-        //TODO: Check if the player has enough resources
-        //InventoryManager.Instance.PayTheCost(
+        //if (_isReadyToBeSpend == spendable) return;
+        ////TODO: Check if the player has enough resources
+        ////InventoryManager.Instance.PayTheCost(
 
-        _isReadyToBeSpend = spendable;
-        CardManager.Instance.OnCardBeingSpendable?.Invoke(this,spendable);
+        //_isReadyToBeSpend = spendable;
+        //CardManager.Instance.OnCardBeingSpendable?.Invoke(this,spendable);
     }
+
 
     protected void SetIcon(Texture icon)
     {

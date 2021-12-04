@@ -25,10 +25,12 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
     public LayerMask CardMask, Default, BookMask;
     private CardBehaviour cardInHand;
     private HexGridBehaviour currentHightlightedHexGrid;
+    private bool hexGridHightlightClickedDown;
     Vector2 mousePosition;
     bool draggingCard = false;
     public Action<bool> OnCardDraggin;
     public GameObject GridHighlight;
+    
     public void Update()
     {
         if(startAcceleration)
@@ -116,7 +118,12 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
         controls.Player.Enable();
         OnCardDraggin += (x) => draggingCard = x;
     }
-
+    void GridHighLightClicked(bool onDown)
+    {
+        if (hexGridHightlightClickedDown == onDown) return;
+        hexGridHightlightClickedDown = onDown;
+        GridHighlight.transform.localScale = onDown ? Vector3.one * 0.9f : Vector3.one;
+    }
     public void OnDisable()
     {
         controls.Player.Disable();
@@ -140,7 +147,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
     public void OnLeftClick(InputAction.CallbackContext context)    
     {
         //doto drag mouse click
-
+         
         if (context.started)
         {
             var startHit = CheckMouseHit();
@@ -158,6 +165,11 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
             {
                 var button = startHit as BookButton;
                 button.ClickDown();
+            }
+            if (startHit is HexGridBehaviour)
+            {
+                //Starthit is on a hexgrid, 
+                GridHighLightClicked(true);
             }
         }
         else if (context.canceled && draggingCard)
@@ -180,22 +192,26 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
 
 
         if (!context.canceled) return;
-
         var hit = CheckMouseHit();
         if (hit is null)
             return;
         if (hit is HexGridBehaviour)
         {
-            GetHexGridInfo(hit as HexGridBehaviour);
+            //prevent OnClickUp is activating on grids
+            if(hexGridHightlightClickedDown)
+                GetHexGridInfo(hit as HexGridBehaviour);
         }
         else if (hit is CardBehaviour)
         {
             //should we even do something here?
+            // Show the card info ?
+
         }
         else if (hit is BookButton)
         {
             hit.gameObject.SendMessage("Activate");
         }
+        GridHighLightClicked(false);
     }
 
     private void GetHexGridInfo(HexGridBehaviour hexGrid)
@@ -218,12 +234,17 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
     public void OnMousePos(InputAction.CallbackContext context)
     {
         mousePosition = context.ReadValue<Vector2>();
-        if (Physics.Raycast(MainCamera.ScreenPointToRay(mousePosition), out var gridHit, 10000, Default))
+        if(!Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition), 100, BookMask | CardMask) && 
+            Physics.Raycast(MainCamera.ScreenPointToRay(mousePosition), out var gridHit, 10000, Default))
         {
-            GridHighlight.SetActive(true);
-            if (gridHit.transform.TryGetComponent<HexGridBehaviour>(out var hexGridBehaviour))
+            if (gridHit.transform.TryGetComponent<HexGridBehaviour>(out var hexGridBehaviour) &&
+                hexGridBehaviour != currentHightlightedHexGrid)
+            {
+                GridHighlight.SetActive(true);
                 currentHightlightedHexGrid = hexGridBehaviour;
-            GridHighlight.transform.SetPositionAndRotation(currentHightlightedHexGrid.transform.position, currentHightlightedHexGrid.transform.rotation);
+                GridHighlight.transform.SetPositionAndRotation(currentHightlightedHexGrid.transform.position, currentHightlightedHexGrid.transform.rotation);
+                GridHighLightClicked(false);
+            }
         }
         else
             GridHighlight.SetActive(false);

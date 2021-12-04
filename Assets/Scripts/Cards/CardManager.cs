@@ -100,14 +100,14 @@ public class CardManager : Singleton<CardManager>
         GameObject card;
         if (cardData is ActionCard)
         {
-            card = Instantiate(ActionCardPrefab);
+            card = Instantiate(ActionCardPrefab,transform.parent);
             card.GetComponent<ActionCardBehaviour>().SetCardData(cardData as ActionCard);
             card.transform.SetPositionAndRotation(CardCreationPosition.position, CardCreationPosition.rotation);
             return card;
         }
         else if (cardData is BlueprintCard)
         {
-            card = Instantiate(BlueprintCardPrefab);
+            card = Instantiate(BlueprintCardPrefab, transform.parent);
             card.GetComponent<BlueprintCardBehaviour>().SetCardData(cardData as BlueprintCard);
             card.transform.SetPositionAndRotation(CardCreationPosition.position, CardCreationPosition.rotation);
             return card;

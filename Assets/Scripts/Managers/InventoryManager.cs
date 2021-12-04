@@ -103,7 +103,7 @@ public class InventoryManager : Singleton<InventoryManager>
         WorkersLeft += workersleft;
     }
 
-    public bool PayTheCost(int wood, int stone, int food, int workersleft)
+    public bool PayTheCost(int wood, int stone, int food, int workersleft, bool pay)
     {
         if (stone > Stone)
             return false;
@@ -113,10 +113,14 @@ public class InventoryManager : Singleton<InventoryManager>
             return false;
         if (workersleft > WorkersLeft)
             return false;
-        Stone -= stone;
-        Wood -= wood;
-        Food -= food;
-        WorkersLeft -= workersleft;
+
+        if (pay)
+        {
+            Stone -= stone;
+            Wood -= wood;
+            Food -= food;
+            WorkersLeft -= workersleft;
+        }
         return true;
     }
 }

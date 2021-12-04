@@ -27,4 +27,22 @@ public class BlueprintCardBehaviour : CardBehaviour
         SetText(texts);
         SetIcon(cardData.CardIcon);
     }
+
+    protected override void CheckIfCardIsReadyToBeSpendable(bool spendable)
+    {
+        if (_isReadyToBeSpend == spendable) return;
+        _isReadyToBeSpend = spendable;
+        var canPay = InventoryManager.Instance.PayTheCost(cardData.WoodCost, cardData.StoneCost, cardData.FoodCost,0,false);
+
+        if (canPay)
+        {
+            CardManager.Instance.OnCardBeingSpendable?.Invoke(this, spendable);
+        }
+        else
+        {
+            _isReadyToBeSpend = false;
+            IsbeingDragged = false;
+            MoveCamera.Instance.OnCardDraggin?.Invoke(false);
+        }
+    }
 }
