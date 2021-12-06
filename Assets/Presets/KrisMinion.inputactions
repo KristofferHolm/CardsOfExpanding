@@ -784,11 +784,11 @@
             ]
         },
         {
-            "name": "New action map",
+            "name": "Cheats",
             "id": "cf7e3d57-3a1d-4a34-8507-83701fea39d5",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Cheat",
                     "type": "Button",
                     "id": "3286ec25-351b-40d4-a834-4138b32bc768",
                     "expectedControlType": "Button",
@@ -800,11 +800,11 @@
                 {
                     "name": "",
                     "id": "e2a5f36f-e501-4eac-84aa-86b70ff8db2e",
-                    "path": "",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Cheat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

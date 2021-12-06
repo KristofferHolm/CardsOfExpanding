@@ -66,6 +66,7 @@ public class CardManager : Singleton<CardManager>
 
     void OnCardBeingDragged(bool dragged)
     {
+        UpdateCardsInHandPositions();
         if (cardBeingDragged == dragged) return;
         cardBeingDragged = dragged;
         if (dragged)

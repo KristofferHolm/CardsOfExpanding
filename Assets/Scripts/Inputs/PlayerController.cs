@@ -797,11 +797,11 @@ public class @PlayerController : IInputActionCollection, IDisposable
             ]
         },
         {
-            ""name"": ""New action map"",
+            ""name"": ""Cheats"",
             ""id"": ""cf7e3d57-3a1d-4a34-8507-83701fea39d5"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Cheat"",
                     ""type"": ""Button"",
                     ""id"": ""3286ec25-351b-40d4-a834-4138b32bc768"",
                     ""expectedControlType"": ""Button"",
@@ -813,11 +813,11 @@ public class @PlayerController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e2a5f36f-e501-4eac-84aa-86b70ff8db2e"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Cheat"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -907,9 +907,9 @@ public class @PlayerController : IInputActionCollection, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        // New action map
-        m_Newactionmap = asset.FindActionMap("New action map", throwIfNotFound: true);
-        m_Newactionmap_Newaction = m_Newactionmap.FindAction("New action", throwIfNotFound: true);
+        // Cheats
+        m_Cheats = asset.FindActionMap("Cheats", throwIfNotFound: true);
+        m_Cheats_Cheat = m_Cheats.FindAction("Cheat", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1134,38 +1134,38 @@ public class @PlayerController : IInputActionCollection, IDisposable
     }
     public UIActions @UI => new UIActions(this);
 
-    // New action map
-    private readonly InputActionMap m_Newactionmap;
-    private INewactionmapActions m_NewactionmapActionsCallbackInterface;
-    private readonly InputAction m_Newactionmap_Newaction;
-    public struct NewactionmapActions
+    // Cheats
+    private readonly InputActionMap m_Cheats;
+    private ICheatsActions m_CheatsActionsCallbackInterface;
+    private readonly InputAction m_Cheats_Cheat;
+    public struct CheatsActions
     {
         private @PlayerController m_Wrapper;
-        public NewactionmapActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Newactionmap_Newaction;
-        public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
+        public CheatsActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Cheat => m_Wrapper.m_Cheats_Cheat;
+        public InputActionMap Get() { return m_Wrapper.m_Cheats; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(NewactionmapActions set) { return set.Get(); }
-        public void SetCallbacks(INewactionmapActions instance)
+        public static implicit operator InputActionMap(CheatsActions set) { return set.Get(); }
+        public void SetCallbacks(ICheatsActions instance)
         {
-            if (m_Wrapper.m_NewactionmapActionsCallbackInterface != null)
+            if (m_Wrapper.m_CheatsActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnNewaction;
+                @Cheat.started -= m_Wrapper.m_CheatsActionsCallbackInterface.OnCheat;
+                @Cheat.performed -= m_Wrapper.m_CheatsActionsCallbackInterface.OnCheat;
+                @Cheat.canceled -= m_Wrapper.m_CheatsActionsCallbackInterface.OnCheat;
             }
-            m_Wrapper.m_NewactionmapActionsCallbackInterface = instance;
+            m_Wrapper.m_CheatsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @Cheat.started += instance.OnCheat;
+                @Cheat.performed += instance.OnCheat;
+                @Cheat.canceled += instance.OnCheat;
             }
         }
     }
-    public NewactionmapActions @Newactionmap => new NewactionmapActions(this);
+    public CheatsActions @Cheats => new CheatsActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1233,8 +1233,8 @@ public class @PlayerController : IInputActionCollection, IDisposable
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
     }
-    public interface INewactionmapActions
+    public interface ICheatsActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnCheat(InputAction.CallbackContext context);
     }
 }

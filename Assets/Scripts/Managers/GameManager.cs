@@ -8,6 +8,14 @@ public class GameManager : Singleton<GameManager>
     public Action OnNewTurn;
     public Action OnEndTurn;
     public Action OnStartGame;
+
+    private void Start()
+    {
+        //because of the town hall, I'll grant 3 workers from start.
+        //but this should be changed later, I think
+        InventoryManager.Instance.Workers = 3;
+    }
+
     public void EndTurn(Action callback)
     {
         // go through end step
@@ -26,4 +34,5 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(0.2f);
         callback?.Invoke();
     }
+
 }

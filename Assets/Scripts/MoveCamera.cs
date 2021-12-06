@@ -180,10 +180,38 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
                 if (cardInHand is BlueprintCardBehaviour)
                 {
                     var blueprint = cardInHand as BlueprintCardBehaviour;
-                    HexGridPropertiesManager.TryGetBuildingData(blueprint.GetBuildingId, out var buildingData);
-                    currentHightlightedHexGrid.Build(buildingData);
+                    //so here we check if the field is okay to build on:
+                    //it should only be accepted to build on roads and planes.
+                    // AND they should be next to a road or building to available. (TODO)
+                    // BUT harvest tents can ONLY be build on resources (stone, trees, berries)
+
+                    //TODO GetbuildingID have to be an enum, I think
+                    if (blueprint.GetBuildingId == 4)
+                    {
+                        if (currentHightlightedHexGrid.Type == GridData.GridType.Berries || currentHightlightedHexGrid.Type == GridData.GridType.Trees || currentHightlightedHexGrid.Type == GridData.GridType.Stones)
+                        {
+                            HexGridPropertiesManager.TryGetBuildingData(blueprint.GetBuildingId, out var buildingData);
+                            currentHightlightedHexGrid.Build(buildingData);
+                            CardManager.Instance.DiscardCard(cardInHand);
+                        }
+                    }
+                    else if (currentHightlightedHexGrid.Type == GridData.GridType.Building && currentHightlightedHexGrid.BuildingId != 3 || currentHightlightedHexGrid.Type == GridData.GridType.Sea)
+                    {
+                        // cant place on these fields
+                    }
+                    else
+                    {
+                       
+                        HexGridPropertiesManager.TryGetBuildingData(blueprint.GetBuildingId, out var buildingData);
+                        currentHightlightedHexGrid.Build(buildingData);
+                        CardManager.Instance.DiscardCard(cardInHand);
+                    }
                 }
-                CardManager.Instance.DiscardCard(cardInHand);
+                if (cardInHand is ActionCardBehaviour)
+                {
+                    //do somehting similar
+                    CardManager.Instance.DiscardCard(cardInHand);
+                }
             }
             cardInHand.IsbeingDragged = false;
             OnCardDraggin.Invoke(false);

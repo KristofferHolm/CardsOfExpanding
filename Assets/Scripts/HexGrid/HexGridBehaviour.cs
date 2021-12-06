@@ -37,6 +37,9 @@ public class HexGridBehaviour : MonoBehaviour
     {
         building.Properties.AbilityUsed = used;
     }
+
+    //TODO: Make a building scaffolding and add timer to it.
+
     public void Build(BuildingsData.Building newBuilding)
     {
         Type = GridData.GridType.Building;
@@ -44,6 +47,14 @@ public class HexGridBehaviour : MonoBehaviour
         if (building.Properties.Daily)
             GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
         UpdateProperties();
+    }
+    public void BuildUpon(BuildingsData.Building newBuilding)
+    {
+        building = newBuilding;
+        InstantiateNewGraphic(newBuilding.Properties.Graphic);
+        if (building.Properties.Daily)
+            GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
+        Type = GridData.GridType.Building;
     }
 
     #endregion
@@ -102,6 +113,7 @@ public class HexGridBehaviour : MonoBehaviour
         GetComponent<MeshRenderer>().material = prop.GroundType;
         properties.GroundType = prop.GroundType;
     }
+
     void UpdateGraphicObject(GridData.Properties prop)
     {
         if (Type == GridData.GridType.Building)
