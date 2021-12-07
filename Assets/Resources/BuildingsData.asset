@@ -52,16 +52,16 @@ MonoBehaviour:
       ActiveAbility: 1
       Daily: 0
       AbilityUsed: 1
-  - Name: Harvesting Tent
+  - Name: Building Progress
     Id: 4
     Properties:
-      Graphic: {fileID: 2346015385588325867, guid: 1cad865da8aa9914cb8596590e9fefb8, type: 3}
-      BookText: 'Daily: (cost 1 Worker) Harvest field for 1 resource
+      Graphic: {fileID: 4588751001462979358, guid: 154d82479f837e94b9ede96635351d18, type: 3}
+      BookText: 'Daily: (cost 1 Worker), finish building (# out of #)
 
 
 '
       ActiveAbility: 1
-      Daily: 0
+      Daily: 1
       AbilityUsed: 0
   - Name: Mine
     Id: 5
@@ -75,7 +75,7 @@ MonoBehaviour:
   - Name: Coal Power Plant
     Id: 6
     Properties:
-      Graphic: {fileID: 0}
+      Graphic: {fileID: 2346015385588325867, guid: 680feafe94a1e8a4f8cbd36ff3ffeecd, type: 3}
       BookText: 'Daily: (Cost 1 Stone, 1 Worker) +2 cards
 
 '

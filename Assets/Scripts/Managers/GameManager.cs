@@ -14,6 +14,8 @@ public class GameManager : Singleton<GameManager>
         //because of the town hall, I'll grant 3 workers from start.
         //but this should be changed later, I think
         InventoryManager.Instance.Workers = 3;
+        InventoryManager.Instance.WorkersLeft = 3;
+        
     }
 
     public void EndTurn(Action callback)

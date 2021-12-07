@@ -190,7 +190,9 @@ public class CardManager : Singleton<CardManager>
     public void Shuffle(CardPlace place)
     {
         //TODO Shuffle animation
-        GetStackByCardPlace(place).ShuffleList();
+        var list = GetStackByCardPlace(place);
+        list.ShuffleList();
+
     }
     public Transform GetTransformByCardPlace(CardPlace place)
     {

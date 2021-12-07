@@ -22,4 +22,5 @@ MonoBehaviour:
   FoodCost: 0
   CoinCost: 0
   TurnsToBuild: 3
-  GivesCard: []
+  GivesCard:
+  - {fileID: 11400000, guid: 125ffc9335344b44d9982a2d62c0ad0b, type: 2}

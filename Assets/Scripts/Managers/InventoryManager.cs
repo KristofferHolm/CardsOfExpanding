@@ -83,7 +83,14 @@ public class InventoryManager : Singleton<InventoryManager>
     private void Start()
     {
         UpdateText();
+        GameManager.Instance.OnNewTurn += GainWorkersForNewTurn;
     }
+
+    private void GainWorkersForNewTurn()
+    {
+        WorkersLeft = Workers;
+    }
+
     private void UpdateText()
     {
         //workersleft out of workers first then:

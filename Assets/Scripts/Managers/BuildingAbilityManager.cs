@@ -13,6 +13,7 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
     private bool GetAction(HexGridBehaviour hexGrid)
     {
         //todo> all the actions;
+        if (hexGrid.GetAbilityUsed) return false;
         switch (hexGrid.BuildingId)
         {
             case 0:
@@ -22,8 +23,7 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
             case 3:
                 return TownHall(hexGrid);
             case 4:
-                Tent();
-                break;
+                return BuildingProgress(hexGrid);
             case 5:
             case 6:
             default:
@@ -46,9 +46,19 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
     {
         return true;
     }
-    private void Tent()
+    private bool BuildingProgress(HexGridBehaviour hexGrid)
     {
-        
+        if (InventoryManager.Instance.PayTheCost(0, 0, 0, 1, true))
+        {
+            var bp = hexGrid.GetComponentInChildren<BuildingProgress>();
+            hexGrid.SetAbilityUsed(true);
+            if(bp.MoveScaffoldingUpANudge(1))
+            {
+                hexGrid.FinishBuilding(bp.BuildingId);
+            }
+            return true;
+        }
+        return false;
     }
 
     private bool TownHall(HexGridBehaviour hexGrid)

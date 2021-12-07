@@ -39,6 +39,28 @@ public class HexGridBehaviour : MonoBehaviour
     }
 
     //TODO: Make a building scaffolding and add timer to it.
+    public void BuildingConstruction(int buildingId, int turnsToFinish)
+    {
+        Type = GridData.GridType.Building;
+        HexGridPropertiesManager.TryGetBuildingData(4, out var contruction);
+        building = contruction;
+        var bp = contruction.Properties.Graphic.GetComponent<BuildingProgress>();
+        bp.BuildingId = buildingId;
+        bp.NumberOfTurnsBeforeFinished = turnsToFinish;
+        if (building.Properties.Daily)
+            GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
+        UpdateProperties();
+    }
+    public void FinishBuilding(int buildingId)
+    {
+        Type = GridData.GridType.Building;
+        HexGridPropertiesManager.TryGetBuildingData(buildingId,out var newBuilding);
+        building = newBuilding;
+        if (building.Properties.Daily)
+            GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
+        UpdateProperties();
+        SetAbilityUsed(false);
+    }
 
     public void Build(BuildingsData.Building newBuilding)
     {
@@ -46,15 +68,7 @@ public class HexGridBehaviour : MonoBehaviour
         building = newBuilding;
         if (building.Properties.Daily)
             GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
-        UpdateProperties();
-    }
-    public void BuildUpon(BuildingsData.Building newBuilding)
-    {
-        building = newBuilding;
-        InstantiateNewGraphic(newBuilding.Properties.Graphic);
-        if (building.Properties.Daily)
-            GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
-        Type = GridData.GridType.Building;
+        UpdateProperties(true);
     }
 
     #endregion

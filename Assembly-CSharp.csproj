@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\HexGrid\HexGridPropertiesManager.cs" />
     <Compile Include="Assets\Scripts\Book\BookManager.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridPropertiesManagerInspector.cs" />
+    <Compile Include="Assets\Scripts\Cheats.cs" />
     <Compile Include="Assets\Scripts\EndTurnButton.cs" />
     <Compile Include="Assets\Scripts\Inputs\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Book\BookActivateButton.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\Tools\Tools.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\MoveBackgroundWithCamera.cs" />
+    <Compile Include="Assets\Scripts\BuildingProgress.cs" />
     <Compile Include="Assets\Scripts\Data\GridData.cs" />
     <Compile Include="Assets\Scripts\Cards\CardManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -92,8 +94,6 @@
     <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
     <Compile Include="Assets\Scripts\Cards\StarterDeck_ScriptableObject.cs" />
     <Compile Include="Assets\Scripts\Data\ActionCard.cs" />
-    <Compile Include="Assets\Scripts\Cheats.cs" />
-    <Compile Include="Assets\Scripts\BuildingProgress.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

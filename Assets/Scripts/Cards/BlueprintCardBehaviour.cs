@@ -5,6 +5,13 @@ using UnityEngine;
 public class BlueprintCardBehaviour : CardBehaviour
 {
     BlueprintCard cardData;
+    public int GetTurnsToBuild
+    {
+        get
+        {
+            return cardData.TurnsToBuild;
+        }
+    }
     public int GetBuildingId
     {
         get

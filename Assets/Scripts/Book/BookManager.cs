@@ -15,6 +15,15 @@ public class BookManager : Singleton<BookManager>
     private string rightText, leftText;
     private bool buttonIsActive = false;
     HexGridBehaviour currentHexGrid;
+
+    public HexGridBehaviour GetCurrentHexGrid
+    {
+        get
+        {
+            return currentHexGrid;
+        }
+    }
+
     private void OnValidate()
     {
         if(!bookAnimator)
@@ -42,7 +51,7 @@ public class BookManager : Singleton<BookManager>
             leftText = buildingData.Name;
             //set text to building
             rightText = buildingData.Properties.BookText;
-            buttonIsActive = buildingData.Properties.ActiveAbility;
+            buttonIsActive = buildingData.Properties.ActiveAbility && !hexGrid.GetAbilityUsed;
         }
         else
         {
@@ -69,6 +78,11 @@ public class BookManager : Singleton<BookManager>
     }
     internal bool ActivateAbility()
     {
-        return BuildingAbilityManager.Instance.ActivateBuildingAbility(currentHexGrid);
+        if (BuildingAbilityManager.Instance.ActivateBuildingAbility(currentHexGrid))
+        {
+            CloseBook();
+            return true;
+        }
+        return false;
     }
 }
