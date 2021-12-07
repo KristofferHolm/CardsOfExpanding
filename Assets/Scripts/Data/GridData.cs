@@ -29,7 +29,8 @@ public class GridData : ScriptableObject
         Stones,
         Berries,
         Fish,
-        Building
+        Building, 
+        Construction
     }
 
     [Serializable]

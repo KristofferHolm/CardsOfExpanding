@@ -41,7 +41,7 @@ public class HexGridBehaviour : MonoBehaviour
     //TODO: Make a building scaffolding and add timer to it.
     public void BuildingConstruction(int buildingId, int turnsToFinish)
     {
-        Type = GridData.GridType.Building;
+        Type = GridData.GridType.Construction;
         HexGridPropertiesManager.TryGetBuildingData(4, out var contruction);
         building = contruction;
         var bp = contruction.Properties.Graphic.GetComponent<BuildingProgress>();
@@ -58,7 +58,7 @@ public class HexGridBehaviour : MonoBehaviour
         building = newBuilding;
         if (building.Properties.Daily)
             GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
-        UpdateProperties();
+       
         SetAbilityUsed(false);
     }
 
