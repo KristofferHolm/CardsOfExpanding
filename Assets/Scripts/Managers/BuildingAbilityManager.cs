@@ -12,6 +12,8 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
 
     private bool GetAction(HexGridBehaviour hexGrid)
     {
+        if(hexGrid.Type == GridData.GridType.Construction)
+            return BuildingProgress(hexGrid);
         //todo> all the actions;
         if (hexGrid.GetAbilityUsed) return false;
         switch (hexGrid.BuildingId)
@@ -23,7 +25,7 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
             case 3:
                 return TownHall(hexGrid);
             case 4:
-                return BuildingProgress(hexGrid);
+                break; //here is space for something else
             case 5:
             case 6:
             default:
@@ -44,15 +46,23 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
     }
     bool LumberMill()
     {
-        return true;
+        if (InventoryManager.Instance.PayTheCost(0, 0, 0, 1, true))
+        {
+            InventoryManager.Instance.GainResources(1, 0, 0, 0);
+            InventoryManager.Instance.Pollution++;
+            return true;
+        }
+        return false;
     }
     private bool BuildingProgress(HexGridBehaviour hexGrid)
     {
+        var bp = hexGrid.GetComponentInChildren<BuildingProgress>();
+        if (bp.AbilityUsed)
+            return false;
         if (InventoryManager.Instance.PayTheCost(0, 0, 0, 1, true))
         {
-            var bp = hexGrid.GetComponentInChildren<BuildingProgress>();
-            hexGrid.SetAbilityUsed(true);
-            if(bp.MoveScaffoldingUpANudge(1))
+            bp.AbilityUsed = true;
+            if (bp.MoveScaffoldingUpANudge(1))
             {
                 hexGrid.FinishBuilding(bp.BuildingId);
             }

@@ -35,6 +35,11 @@ public class BlueprintCardBehaviour : CardBehaviour
         SetIcon(cardData.CardIcon);
     }
 
+    public void PayThePrice()
+    {
+        InventoryManager.Instance.PayTheCost(cardData.WoodCost, cardData.StoneCost, cardData.FoodCost, 0, true);
+    }
+
     protected override void CheckIfCardIsReadyToBeSpendable(bool spendable)
     {
         if (_isReadyToBeSpend == spendable) return;

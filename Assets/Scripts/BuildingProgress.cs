@@ -7,7 +7,17 @@ public class BuildingProgress : MonoBehaviour
     public int BuildingId;
     public int NumberOfTurnsBeforeFinished;
     public Transform ScaffoldingTransform;
-    private int moveNudges = 0;
+    private int moveNudges;
+    public bool AbilityUsed;
+
+    public string GetBookText
+    {
+        get
+        {
+            return $"Daily: (cost 1 Worker), finish building ({moveNudges} out of {NumberOfTurnsBeforeFinished})";
+        }
+    }
+
     /// <summary>
     /// returns true when building is finnished
     /// </summary>

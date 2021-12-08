@@ -53,6 +53,19 @@ public class BookManager : Singleton<BookManager>
             rightText = buildingData.Properties.BookText;
             buttonIsActive = buildingData.Properties.ActiveAbility && !hexGrid.GetAbilityUsed;
         }
+        else if (hexGrid.Type == GridData.GridType.Construction)
+        {
+            var contruction = hexGrid.GetBuildingProcess;
+            if (!HexGridPropertiesManager.TryGetBuildingData(contruction.BuildingId, out var buildingData))
+            {
+                Debug.LogError("building ID of " + contruction.BuildingId + " could not be found");
+                return;
+            }
+            currentHexGrid = hexGrid;
+            leftText = buildingData.Name + " is under construction";
+            rightText = contruction.GetBookText;
+            buttonIsActive = !contruction.AbilityUsed; 
+        }
         else
         {
             currentHexGrid = hexGrid;

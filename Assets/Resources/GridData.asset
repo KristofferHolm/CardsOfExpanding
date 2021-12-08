@@ -56,5 +56,5 @@ MonoBehaviour:
   - Name: Fish
     Key: 8
     Properties:
-      GroundType: {fileID: 2100000, guid: b384b1f0938ded048840534bd9a05d84, type: 2}
+      GroundType: {fileID: 2100000, guid: 11c4fb615ff4b1648a53de49d48efdf8, type: 2}
       Graphic: {fileID: 4588751001462979358, guid: 154d82479f837e94b9ede96635351d18, type: 3}

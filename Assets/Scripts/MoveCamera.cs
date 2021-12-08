@@ -15,7 +15,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
     float _maxSpeed = 16f;
     float _acceleration = 8f;
     float _deacceleration = 16f;
-    float _zoomSpeed = 0.5f;
+    float _zoomSpeed = 0.01f;
     bool startAcceleration = false;
     Vector2 direction;
     Vector2 currentDir;
@@ -186,11 +186,13 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
                     //TODO GetbuildingID have to be an enum, I think
                     if (currentHightlightedHexGrid.Type == GridData.GridType.Building && currentHightlightedHexGrid.BuildingId == 3 || currentHightlightedHexGrid.Type == GridData.GridType.Plane)
                     {
+                        blueprint.PayThePrice();
                         currentHightlightedHexGrid.BuildingConstruction(blueprint.GetBuildingId, blueprint.GetTurnsToBuild);
                         CardManager.Instance.DiscardCard(cardInHand);
                     }
                     else
                     {
+                        CardManager.Instance.OnCardBeingSpendable?.Invoke(cardInHand,false);
                         // cant place on these fields
                     }
                 }

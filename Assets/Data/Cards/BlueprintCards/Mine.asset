@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 'Daily: (Cost 1 worker) Harvest 3 Stone from one field that is adjacent
     or has a Tunnel connected to it.'
   CardIcon: {fileID: 2800000, guid: 5356cb561193e2e45bcc33a88e2e4e65, type: 3}
-  BuildingId: 6
+  BuildingId: 5
   WoodCost: 0
   StoneCost: 3
   FoodCost: 0

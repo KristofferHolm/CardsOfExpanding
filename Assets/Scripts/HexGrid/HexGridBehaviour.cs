@@ -33,32 +33,63 @@ public class HexGridBehaviour : MonoBehaviour
         }
     }
 
+    public GameObject GetGraphic {
+        get
+        {
+            if (Type == GridData.GridType.Building)
+            {
+                return building.Properties.Graphic;
+            }
+            else
+            {
+                return properties.Graphic;
+            }
+
+        }
+    }
+    public BuildingProgress GetBuildingProcess
+    {
+        get
+        {
+            return transform.GetComponentInChildren<BuildingProgress>();
+        }
+    }
+
     public void SetAbilityUsed(bool used)
     {
-        building.Properties.AbilityUsed = used;
+        if (Type == GridData.GridType.Building)
+            building.Properties.AbilityUsed = used;
+        else if (Type == GridData.GridType.Construction)
+            GetBuildingProcess.AbilityUsed = used;
     }
 
     //TODO: Make a building scaffolding and add timer to it.
     public void BuildingConstruction(int buildingId, int turnsToFinish)
     {
         Type = GridData.GridType.Construction;
-        HexGridPropertiesManager.TryGetBuildingData(4, out var contruction);
-        building = contruction;
-        var bp = contruction.Properties.Graphic.GetComponent<BuildingProgress>();
+        //HexGridPropertiesManager.TryGetBuildingData(4, out var contruction);
+        //building = contruction;
+        UnupdatedData = true;
+        UpdateProperties();
+        var bp = GetBuildingProcess;
         bp.BuildingId = buildingId;
         bp.NumberOfTurnsBeforeFinished = turnsToFinish;
-        if (building.Properties.Daily)
-            GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
-        UpdateProperties();
+        building.Id = buildingId;
+
+        GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
     }
+
     public void FinishBuilding(int buildingId)
     {
+        GameManager.Instance.OnNewTurn -= () => SetAbilityUsed(false);
         Type = GridData.GridType.Building;
         HexGridPropertiesManager.TryGetBuildingData(buildingId,out var newBuilding);
         building = newBuilding;
+        UnupdatedData = true;
+        UpdateProperties();
+        
         if (building.Properties.Daily)
             GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
-       
         SetAbilityUsed(false);
     }
 

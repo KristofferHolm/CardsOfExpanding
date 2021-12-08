@@ -242,9 +242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2741c387e1c25074593bdb9b9c0de718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingId: 1
-  NumberOfTurnsBeforeFinished: 2
+  BuildingId: -9000
+  NumberOfTurnsBeforeFinished: -9000
   ScaffoldingTransform: {fileID: 4342114064194001934}
+  AbilityUsed: 0
 --- !u!1 &6327527494502679256
 GameObject:
   m_ObjectHideFlags: 0
