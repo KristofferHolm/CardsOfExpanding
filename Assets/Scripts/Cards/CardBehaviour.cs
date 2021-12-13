@@ -118,4 +118,5 @@ public class CardBehaviour : MonoBehaviour
         _isReadyToBeSpend = false;
         //_isBeingDragged = false;
     }
+
 }

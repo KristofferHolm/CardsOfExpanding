@@ -37,6 +37,7 @@ public class BlueprintCardBehaviour : CardBehaviour
 
     public void PayThePrice()
     {
+        //we dont pay the 1 worker, we do that by activating the progress ability
         InventoryManager.Instance.PayTheCost(cardData.WoodCost, cardData.StoneCost, cardData.FoodCost, 0, true);
     }
 
@@ -44,7 +45,8 @@ public class BlueprintCardBehaviour : CardBehaviour
     {
         if (_isReadyToBeSpend == spendable) return;
         _isReadyToBeSpend = spendable;
-        var canPay = InventoryManager.Instance.PayTheCost(cardData.WoodCost, cardData.StoneCost, cardData.FoodCost,0,false);
+        //it will always cost one worker to build any blueprint, and automatically progress one days work
+        var canPay = InventoryManager.Instance.PayTheCost(cardData.WoodCost, cardData.StoneCost, cardData.FoodCost,1,false);
 
         if (canPay)
         {

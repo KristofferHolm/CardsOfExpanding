@@ -58,7 +58,10 @@ public class CardManager : Singleton<CardManager>
         if (isSpendable)
             Hand.Remove(card);
         else
+        {
+            card.ResetCard();
             Hand.Add(card);
+        }
 
         RearrangeCardsInHand(out var cardsOrder);
         UpdateCardsInHandPositions(cardsOrder);

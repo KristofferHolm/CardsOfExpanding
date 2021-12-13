@@ -62,10 +62,11 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
         if (InventoryManager.Instance.PayTheCost(0, 0, 0, 1, true))
         {
             bp.AbilityUsed = true;
-            if (bp.MoveScaffoldingUpANudge(1))
+            bp.MoveScaffoldingUpANudge(1, (d) =>
             {
-                hexGrid.FinishBuilding(bp.BuildingId);
-            }
+                if (d)
+                    hexGrid.FinishBuilding(bp.BuildingId);
+            });
             return true;
         }
         return false;

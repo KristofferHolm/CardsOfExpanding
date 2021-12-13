@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,18 +24,13 @@ public class BuildingProgress : MonoBehaviour
     /// </summary>
     /// <param name="numberOfNudges"></param>
     /// <returns></returns>
-    public bool MoveScaffoldingUpANudge(int numberOfNudges)
+    public void MoveScaffoldingUpANudge(int numberOfNudges, Action<bool> callback)
     {
         moveNudges += numberOfNudges;
         StopAllCoroutines();
-        if (moveNudges >= NumberOfTurnsBeforeFinished)
-        {
-            return true;
-        }
-        StartCoroutine(MoveScaffoldingAnimation());
-        return false;
+        StartCoroutine(MoveScaffoldingAnimation(callback));
     }
-    IEnumerator MoveScaffoldingAnimation()
+    IEnumerator MoveScaffoldingAnimation(Action<bool> callback)
     {
         //ScaffoldingTransform
         while (ScaffoldingTransform.localPosition.y < 0.04f * moveNudges)
@@ -46,13 +42,13 @@ public class BuildingProgress : MonoBehaviour
             yield return null;
         }
         ScaffoldingTransform.localPosition = new Vector3(0, moveNudges * 0.04f, 0);
-        
+        callback.Invoke(moveNudges >= NumberOfTurnsBeforeFinished);
         yield return null;
     }
     Vector3 Shake()
     {
-        float x = Random.Range(-0.001f, 0.001f);
-        float z = Random.Range(-0.001f, 0.001f);
+        float x = UnityEngine.Random.Range(-0.001f, 0.001f);
+        float z = UnityEngine.Random.Range(-0.001f, 0.001f);
         return new Vector3(x, ScaffoldingTransform.localPosition.y, z);
     }
 }

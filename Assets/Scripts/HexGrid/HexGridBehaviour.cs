@@ -63,7 +63,7 @@ public class HexGridBehaviour : MonoBehaviour
             GetBuildingProcess.AbilityUsed = used;
     }
 
-    //TODO: Make a building scaffolding and add timer to it.
+    //TODO: Make a building spawning animation and continue with the progressing animation
     public void BuildingConstruction(int buildingId, int turnsToFinish)
     {
         Type = GridData.GridType.Construction;
@@ -75,8 +75,8 @@ public class HexGridBehaviour : MonoBehaviour
         bp.BuildingId = buildingId;
         bp.NumberOfTurnsBeforeFinished = turnsToFinish;
         building.Id = buildingId;
-
         GameManager.Instance.OnNewTurn += () => SetAbilityUsed(false);
+        BuildingAbilityManager.Instance.ActivateBuildingAbility(this);
     }
 
     public void FinishBuilding(int buildingId)

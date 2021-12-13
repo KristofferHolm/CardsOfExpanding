@@ -192,6 +192,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
                     }
                     else
                     {
+                        cardInHand.IsbeingDragged = false;
                         CardManager.Instance.OnCardBeingSpendable?.Invoke(cardInHand,false);
                         // cant place on these fields
                     }
