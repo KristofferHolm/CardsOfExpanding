@@ -94,6 +94,8 @@
     <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
     <Compile Include="Assets\Scripts\Cards\StarterDeck_ScriptableObject.cs" />
     <Compile Include="Assets\Scripts\Data\ActionCard.cs" />
+    <Compile Include="Assets\Scripts\Managers\ActionCardManager.cs" />
+    <Compile Include="Assets\Scripts\LookAtCamera.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -9,5 +9,6 @@ public class ActionCard : Card
     public int WorkerCost;
     public int Level;
     public int pollutionCost;
-    public UnityAction Ability;
+    public ActionCardManager.ActionCard Ability;
+    
 }

@@ -16,6 +16,7 @@ public class InventoryManager : Singleton<InventoryManager>
     private int food;
     private int workers;
     private int workersLeft;
+    private int coin;
     public int Stone
     {
         get => stone; set
@@ -109,7 +110,21 @@ public class InventoryManager : Singleton<InventoryManager>
         Food += food;
         WorkersLeft += workersleft;
     }
-
+    public void GainCoin(int amount)
+    {
+        coin += amount;
+    }
+    public bool CanPayCoin(int amount, bool pay = false)
+    {
+        if (amount <= coin)
+        {
+            if (pay)
+                coin -= amount;
+            return true;
+        }
+        else
+            return false;
+    }
     public bool PayTheCost(int wood, int stone, int food, int workersleft, bool pay)
     {
         if (stone > Stone)

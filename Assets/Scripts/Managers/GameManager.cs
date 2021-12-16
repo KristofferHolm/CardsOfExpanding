@@ -8,6 +8,17 @@ public class GameManager : Singleton<GameManager>
     public Action OnNewTurn;
     public Action OnEndTurn;
     public Action OnStartGame;
+    public Action<bool> ShowResources;
+
+    public Transform MainCamera {
+        get
+        {
+            if (mainCamera == null)
+                mainCamera = Camera.main.transform;
+            return mainCamera;
+        }
+    }
+    private Transform mainCamera;
 
     private void Start()
     {

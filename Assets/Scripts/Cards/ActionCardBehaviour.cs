@@ -5,6 +5,13 @@ using UnityEngine;
 public class ActionCardBehaviour : CardBehaviour
 {
     ActionCard cardData;
+    
+    public ActionCardManager.ActionCard GetAbility
+    {
+        get {
+        return cardData.Ability;
+        }
+    }
 
     public void SetCardData(ActionCard data)
     {

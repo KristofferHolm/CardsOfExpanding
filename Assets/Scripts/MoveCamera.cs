@@ -188,6 +188,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
                     {
                         blueprint.PayThePrice();
                         currentHightlightedHexGrid.BuildingConstruction(blueprint.GetBuildingId, blueprint.GetTurnsToBuild);
+                        
                         CardManager.Instance.DiscardCard(cardInHand);
                     }
                     else
@@ -199,8 +200,14 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
                 }
                 if (cardInHand is ActionCardBehaviour)
                 {
-                    //do somehting similar
-                    CardManager.Instance.DiscardCard(cardInHand);
+                    var actionCard = cardInHand as ActionCardBehaviour;
+                    if (ActionCardManager.Instance.GetActionCardAbility(currentHightlightedHexGrid, actionCard.GetAbility, out var ability))
+                    {
+                        ability.Invoke();
+                        CardManager.Instance.DiscardCard(cardInHand);
+                    }
+                    cardInHand.IsbeingDragged = false;
+                    CardManager.Instance.OnCardBeingSpendable?.Invoke(cardInHand, false);
                 }
             }
             cardInHand.IsbeingDragged = false;

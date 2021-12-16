@@ -1,13 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 public class HexGridBehaviour : MonoBehaviour
 {
     public GridData.GridType Type = GridData.GridType.Undecided;
+    public TextMeshPro HighlightText;
     public int SetStartBuildingId = -1;
+    
     private GridData.Properties properties;
     private BuildingsData.Building building;
+    private int amountOfResources = 5;
+
     [HideInInspector]    public bool UnupdatedData;
     public int BuildingId
     {
@@ -17,8 +22,34 @@ public class HexGridBehaviour : MonoBehaviour
         }
     }
 
+    #region Resource Handeling
+    public void ShowResources(bool show)
+    {
+        //secure check
+        switch (Type)
+        {
+            case GridData.GridType.Trees:
+            case GridData.GridType.Stones:
+            case GridData.GridType.Berries:
+            case GridData.GridType.Fish:
+                break;
+            default:
+                return;
+        }
+        HighlightText.gameObject.SetActive(show);
+        HighlightText.text = $"{amountOfResources} / 5 ";
+
+    }
+    public void HarvestField(int amount)
+    {
+
+    }
+    #endregion
+
+
+
     #region Handeling the abilities of building
-    
+
     public bool GetAbilityUsed
     {
         get
@@ -109,6 +140,18 @@ public class HexGridBehaviour : MonoBehaviour
         OnValidate();
         if(building.Properties != null && building.Properties.ActiveAbility)
             building.Properties.AbilityUsed = false;
+
+        switch (Type)
+        {
+            case GridData.GridType.Trees:
+            case GridData.GridType.Stones:
+            case GridData.GridType.Berries:
+            case GridData.GridType.Fish:
+                GameManager.Instance.ShowResources += ShowResources;
+                break;
+            default:
+                return;
+        }
     }
 
     #region Graphic of the grid and management of which building it is
@@ -193,18 +236,18 @@ public class HexGridBehaviour : MonoBehaviour
 
     private void InstantiateNewGraphic(GameObject go)
     { 
-        //TODO: plz pool soon
-        if (transform.childCount != 0)
+        //TODO: plz pool soon AND check better than amount of children
+        while (transform.childCount > 1)
         {
             try
             {
-                DestroyImmediate(transform.GetChild(0).gameObject);
+                DestroyImmediate(transform.GetChild(1).gameObject);
             }
             catch (Exception)
             {
                 try
                 {
-                    Destroy(transform.GetChild(0).gameObject);
+                    Destroy(transform.GetChild(1).gameObject);
                 }
                 catch (Exception)
                 {
