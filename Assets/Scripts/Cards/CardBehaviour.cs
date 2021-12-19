@@ -76,6 +76,7 @@ public class CardBehaviour : MonoBehaviour
     }
     protected virtual void CheckIfCardIsReadyToBeSpendable(bool spendable)
     {
+        GameManager.Instance.ShowResources?.Invoke(spendable);
         //if (_isReadyToBeSpend == spendable) return;
         ////TODO: Check if the player has enough resources
         ////InventoryManager.Instance.PayTheCost(
@@ -116,6 +117,7 @@ public class CardBehaviour : MonoBehaviour
     public void ResetCard()
     {
         _isReadyToBeSpend = false;
+        GameManager.Instance.ShowResources?.Invoke(false);
         //_isBeingDragged = false;
     }
 

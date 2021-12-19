@@ -174,7 +174,6 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
         }
         else if (context.canceled && draggingCard)
         {
-            //TODO where is the card, and what to do with it?
             if (cardInHand.IsReadyToBeSpend)
             {
                 if (cardInHand is BlueprintCardBehaviour)
@@ -201,13 +200,15 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
                 if (cardInHand is ActionCardBehaviour)
                 {
                     var actionCard = cardInHand as ActionCardBehaviour;
-                    if (ActionCardManager.Instance.GetActionCardAbility(currentHightlightedHexGrid, actionCard.GetAbility, out var ability))
+                    if (ActionCardManager.Instance.GetActionCardAbility(currentHightlightedHexGrid, actionCard.GetAbility))
                     {
-                        ability.Invoke();
                         CardManager.Instance.DiscardCard(cardInHand);
                     }
-                    cardInHand.IsbeingDragged = false;
-                    CardManager.Instance.OnCardBeingSpendable?.Invoke(cardInHand, false);
+                    else
+                    {
+                        cardInHand.IsbeingDragged = false;
+                        CardManager.Instance.OnCardBeingSpendable?.Invoke(cardInHand, false);
+                    }
                 }
             }
             cardInHand.IsbeingDragged = false;

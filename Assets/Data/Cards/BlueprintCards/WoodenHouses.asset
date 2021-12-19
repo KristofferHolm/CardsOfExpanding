@@ -19,7 +19,7 @@ MonoBehaviour:
   WoodCost: 4
   StoneCost: 2
   FoodCost: 0
-  CoinCost: 0
+  CoinCost: 2
   TurnsToBuild: 2
   GivesCard:
   - {fileID: 11400000, guid: cbcd305bd4d0e0047bb7e6a0902e8eca, type: 2}

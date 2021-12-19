@@ -278,6 +278,33 @@
             ]
         },
         {
+            "name": "BuyCardsMenu",
+            "id": "15ff2d8b-127b-45e8-8937-b08ec7a8f5c0",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "84514437-c97b-4781-b695-894c71abe49a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "eb1c60c4-7a05-4700-a987-fc7a006179c2",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "UI",
             "id": "86d745fa-dee8-490d-96e4-9435afa3be56",
             "actions": [

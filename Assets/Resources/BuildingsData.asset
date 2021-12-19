@@ -120,3 +120,19 @@ MonoBehaviour:
       ActiveAbility: 0
       Daily: 0
       AbilityUsed: 0
+  - Name: Drawing Board
+    Id: 11
+    Properties:
+      Graphic: {fileID: 2346015385588325867, guid: 1cad865da8aa9914cb8596590e9fefb8, type: 3}
+      BookText: Buy blueprints
+      ActiveAbility: 1
+      Daily: 0
+      AbilityUsed: 0
+  - Name: Fishing Harbour
+    Id: 12
+    Properties:
+      Graphic: {fileID: 2346015385588325867, guid: 680feafe94a1e8a4f8cbd36ff3ffeecd, type: 3}
+      BookText: Buy blueprints
+      ActiveAbility: 1
+      Daily: 1
+      AbilityUsed: 0

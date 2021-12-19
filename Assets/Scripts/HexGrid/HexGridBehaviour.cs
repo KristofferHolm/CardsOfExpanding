@@ -12,6 +12,8 @@ public class HexGridBehaviour : MonoBehaviour
     private GridData.Properties properties;
     private BuildingsData.Building building;
     private int amountOfResources = 5;
+    private bool subscribedToShowResources;
+    public int GetAmountOfResources {get => amountOfResources;}
 
     [HideInInspector]    public bool UnupdatedData;
     public int BuildingId
@@ -23,6 +25,26 @@ public class HexGridBehaviour : MonoBehaviour
     }
 
     #region Resource Handeling
+    void SetSubscribtionToShowResoures()
+    {
+        switch (Type)
+        {
+            case GridData.GridType.Trees:
+            case GridData.GridType.Stones:
+            case GridData.GridType.Berries:
+            case GridData.GridType.Fish:
+                if (subscribedToShowResources) break;
+                subscribedToShowResources = true;
+                GameManager.Instance.ShowResources += ShowResources;
+                break;
+            default:
+                if (!subscribedToShowResources) break;
+                subscribedToShowResources = false;
+                GameManager.Instance.ShowResources -= ShowResources;
+                return;
+        }
+    }
+
     public void ShowResources(bool show)
     {
         //secure check
@@ -40,9 +62,39 @@ public class HexGridBehaviour : MonoBehaviour
         HighlightText.text = $"{amountOfResources} / 5 ";
 
     }
-    public void HarvestField(int amount)
-    {
 
+    public int HarvestField(int amount)
+    {
+        if (amount > amountOfResources)
+        {
+            amount = amountOfResources;
+            amountOfResources = 0;
+            EmptiedResources();
+        }
+        amountOfResources -= amount;
+        if(amountOfResources == 0)
+            EmptiedResources();
+        return amount;
+    }
+
+    private void EmptiedResources()
+    {
+        switch (Type)
+        {
+            case GridData.GridType.Trees:
+            case GridData.GridType.Stones:
+            case GridData.GridType.Berries:
+            case GridData.GridType.Building:
+            case GridData.GridType.Construction:
+                Type = GridData.GridType.Plane;
+                break;
+            case GridData.GridType.Fish:
+                Type = GridData.GridType.Sea;
+                break;
+            default:
+                break;
+        }
+        UpdateProperties();
     }
     #endregion
 
@@ -85,6 +137,8 @@ public class HexGridBehaviour : MonoBehaviour
             return transform.GetComponentInChildren<BuildingProgress>();
         }
     }
+
+ 
 
     public void SetAbilityUsed(bool used)
     {
@@ -141,17 +195,7 @@ public class HexGridBehaviour : MonoBehaviour
         if(building.Properties != null && building.Properties.ActiveAbility)
             building.Properties.AbilityUsed = false;
 
-        switch (Type)
-        {
-            case GridData.GridType.Trees:
-            case GridData.GridType.Stones:
-            case GridData.GridType.Berries:
-            case GridData.GridType.Fish:
-                GameManager.Instance.ShowResources += ShowResources;
-                break;
-            default:
-                return;
-        }
+        SetSubscribtionToShowResoures();
     }
 
     #region Graphic of the grid and management of which building it is
@@ -191,6 +235,7 @@ public class HexGridBehaviour : MonoBehaviour
         var prop = HexGridPropertiesManager.GetProperty(Type);
         UpdateGroundTexture(prop);
         UpdateGraphicObject(prop);
+        SetSubscribtionToShowResoures();
         UnupdatedData = false;
     }
 

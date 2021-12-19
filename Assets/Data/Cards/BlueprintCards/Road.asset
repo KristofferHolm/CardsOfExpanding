@@ -22,6 +22,6 @@ MonoBehaviour:
   WoodCost: 1
   StoneCost: 0
   FoodCost: 0
-  CoinCost: 0
+  CoinCost: 2
   TurnsToBuild: 1
   GivesCard: []

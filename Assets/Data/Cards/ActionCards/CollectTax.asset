@@ -18,3 +18,4 @@ MonoBehaviour:
   WorkerCost: 0
   Level: 0
   pollutionCost: 0
+  Ability: 1

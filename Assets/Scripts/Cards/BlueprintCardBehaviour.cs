@@ -45,6 +45,7 @@ public class BlueprintCardBehaviour : CardBehaviour
     {
         if (_isReadyToBeSpend == spendable) return;
         _isReadyToBeSpend = spendable;
+        base.CheckIfCardIsReadyToBeSpendable(spendable);
         //it will always cost one worker to build any blueprint, and automatically progress one days work
         var canPay = InventoryManager.Instance.PayTheCost(cardData.WoodCost, cardData.StoneCost, cardData.FoodCost,1,false);
 

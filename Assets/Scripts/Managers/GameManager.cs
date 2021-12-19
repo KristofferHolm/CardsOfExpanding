@@ -9,7 +9,8 @@ public class GameManager : Singleton<GameManager>
     public Action OnEndTurn;
     public Action OnStartGame;
     public Action<bool> ShowResources;
-
+    public Action<bool> OpenCardsMenu;
+ 
     public Transform MainCamera {
         get
         {
@@ -41,7 +42,7 @@ public class GameManager : Singleton<GameManager>
         // TODO; Make some animation of end turn
         OnEndTurn?.Invoke();
         yield return new WaitForSeconds(0.2f);
-        CardManager.Instance.DrawCard();
+        CardManager.Instance.DrawCard(3);
         yield return new WaitForSeconds(0.2f);
         OnNewTurn?.Invoke();
         yield return new WaitForSeconds(0.2f);

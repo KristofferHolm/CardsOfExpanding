@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LookAtCamera : MonoBehaviour
 {
-    void Update()
+    void Start()
     {
-        transform.LookAt(GameManager.Instance.MainCamera);
+        transform.rotation = GameManager.Instance.MainCamera.rotation * Quaternion.Euler(180,0,180);
     }
 }

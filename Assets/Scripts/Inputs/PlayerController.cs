@@ -291,6 +291,33 @@ public class @PlayerController : IInputActionCollection, IDisposable
             ]
         },
         {
+            ""name"": ""BuyCardsMenu"",
+            ""id"": ""15ff2d8b-127b-45e8-8937-b08ec7a8f5c0"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""84514437-c97b-4781-b695-894c71abe49a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""eb1c60c4-7a05-4700-a987-fc7a006179c2"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""UI"",
             ""id"": ""86d745fa-dee8-490d-96e4-9435afa3be56"",
             ""actions"": [
@@ -895,6 +922,9 @@ public class @PlayerController : IInputActionCollection, IDisposable
         m_Player_RightClick = m_Player.FindAction("RightClick", throwIfNotFound: true);
         m_Player_MiddleClick = m_Player.FindAction("MiddleClick", throwIfNotFound: true);
         m_Player_MousePos = m_Player.FindAction("MousePos", throwIfNotFound: true);
+        // BuyCardsMenu
+        m_BuyCardsMenu = asset.FindActionMap("BuyCardsMenu", throwIfNotFound: true);
+        m_BuyCardsMenu_Newaction = m_BuyCardsMenu.FindAction("New action", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1028,6 +1058,39 @@ public class @PlayerController : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // BuyCardsMenu
+    private readonly InputActionMap m_BuyCardsMenu;
+    private IBuyCardsMenuActions m_BuyCardsMenuActionsCallbackInterface;
+    private readonly InputAction m_BuyCardsMenu_Newaction;
+    public struct BuyCardsMenuActions
+    {
+        private @PlayerController m_Wrapper;
+        public BuyCardsMenuActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_BuyCardsMenu_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_BuyCardsMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BuyCardsMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IBuyCardsMenuActions instance)
+        {
+            if (m_Wrapper.m_BuyCardsMenuActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnNewaction;
+            }
+            m_Wrapper.m_BuyCardsMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+        }
+    }
+    public BuyCardsMenuActions @BuyCardsMenu => new BuyCardsMenuActions(this);
 
     // UI
     private readonly InputActionMap m_UI;
@@ -1219,6 +1282,10 @@ public class @PlayerController : IInputActionCollection, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnMiddleClick(InputAction.CallbackContext context);
         void OnMousePos(InputAction.CallbackContext context);
+    }
+    public interface IBuyCardsMenuActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

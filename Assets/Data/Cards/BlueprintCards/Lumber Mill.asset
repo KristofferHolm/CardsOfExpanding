@@ -19,7 +19,7 @@ MonoBehaviour:
   BuildingId: 7
   WoodCost: 3
   StoneCost: 0
-  FoodCost: 0
+  FoodCost: 5
   CoinCost: 0
   TurnsToBuild: 3
   GivesCard:

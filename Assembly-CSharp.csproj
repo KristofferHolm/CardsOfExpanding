@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Data\BlueprintCard.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridBehaviour.cs" />
+    <Compile Include="Assets\Scripts\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\Cards\CardBehaviour.cs" />
     <Compile Include="Assets\Samples\Input System\1.0.2\Custom Binding Composite\CustomComposite.cs" />
     <Compile Include="Assets\Scripts\Cards\CardBehaviourInspector.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\Scripts\Book\BookActivateButton.cs" />
     <Compile Include="Assets\Scripts\HexGrid\HexGridBehaviourInspector.cs" />
     <Compile Include="Assets\Scripts\Tools\Tools.cs" />
+    <Compile Include="Assets\Scripts\Managers\ActionCardManager.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\MoveBackgroundWithCamera.cs" />
     <Compile Include="Assets\Scripts\BuildingProgress.cs" />
@@ -94,8 +96,7 @@
     <Compile Include="Assets\Scripts\Data\BuildingsData.cs" />
     <Compile Include="Assets\Scripts\Cards\StarterDeck_ScriptableObject.cs" />
     <Compile Include="Assets\Scripts\Data\ActionCard.cs" />
-    <Compile Include="Assets\Scripts\Managers\ActionCardManager.cs" />
-    <Compile Include="Assets\Scripts\LookAtCamera.cs" />
+    <Compile Include="Assets\Scripts\BuyCardsMenuHandler.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
