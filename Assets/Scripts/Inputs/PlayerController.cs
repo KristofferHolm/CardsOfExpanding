@@ -295,10 +295,34 @@ public class @PlayerController : IInputActionCollection, IDisposable
             ""id"": ""15ff2d8b-127b-45e8-8937-b08ec7a8f5c0"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""LeftClick"",
                     ""type"": ""Button"",
-                    ""id"": ""84514437-c97b-4781-b695-894c71abe49a"",
+                    ""id"": ""6ef30ad9-6c8e-4145-9d85-4eb82972c40f"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePos"",
+                    ""type"": ""Value"",
+                    ""id"": ""3c898f9a-2ded-4413-b535-8fb647dc26ab"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""d3e7f0b6-3a88-4c41-b737-5bec92928326"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MouseScroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""5c7336ae-4cb0-40e2-8e3b-4c72e3a47dcf"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -306,12 +330,56 @@ public class @PlayerController : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""eb1c60c4-7a05-4700-a987-fc7a006179c2"",
-                    ""path"": """",
+                    ""id"": ""3da75cb8-d515-4f77-8fab-9408d0d394fa"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""LeftClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""56529b89-aac2-44cf-b30d-28a4de5b7621"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MousePos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8740916e-6eae-4da1-8c8e-16d3e13a4b08"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da528ee0-7cfb-4191-a1fb-c465bc5745cb"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d83823fe-f5f9-45ee-b068-0544842c4f3c"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""MouseScroll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -849,6 +917,33 @@ public class @PlayerController : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""New action map"",
+            ""id"": ""ee7a4ab8-afdb-4b49-8ae0-5180f5eb93f1"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""5d24a5e4-2838-4380-bfbb-605ebcd0bc53"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""171bd699-5435-44b9-bd5c-5607cdf201b2"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -924,7 +1019,10 @@ public class @PlayerController : IInputActionCollection, IDisposable
         m_Player_MousePos = m_Player.FindAction("MousePos", throwIfNotFound: true);
         // BuyCardsMenu
         m_BuyCardsMenu = asset.FindActionMap("BuyCardsMenu", throwIfNotFound: true);
-        m_BuyCardsMenu_Newaction = m_BuyCardsMenu.FindAction("New action", throwIfNotFound: true);
+        m_BuyCardsMenu_LeftClick = m_BuyCardsMenu.FindAction("LeftClick", throwIfNotFound: true);
+        m_BuyCardsMenu_MousePos = m_BuyCardsMenu.FindAction("MousePos", throwIfNotFound: true);
+        m_BuyCardsMenu_Exit = m_BuyCardsMenu.FindAction("Exit", throwIfNotFound: true);
+        m_BuyCardsMenu_MouseScroll = m_BuyCardsMenu.FindAction("MouseScroll", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -940,6 +1038,9 @@ public class @PlayerController : IInputActionCollection, IDisposable
         // Cheats
         m_Cheats = asset.FindActionMap("Cheats", throwIfNotFound: true);
         m_Cheats_Cheat = m_Cheats.FindAction("Cheat", throwIfNotFound: true);
+        // New action map
+        m_Newactionmap = asset.FindActionMap("New action map", throwIfNotFound: true);
+        m_Newactionmap_Newaction = m_Newactionmap.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1062,12 +1163,18 @@ public class @PlayerController : IInputActionCollection, IDisposable
     // BuyCardsMenu
     private readonly InputActionMap m_BuyCardsMenu;
     private IBuyCardsMenuActions m_BuyCardsMenuActionsCallbackInterface;
-    private readonly InputAction m_BuyCardsMenu_Newaction;
+    private readonly InputAction m_BuyCardsMenu_LeftClick;
+    private readonly InputAction m_BuyCardsMenu_MousePos;
+    private readonly InputAction m_BuyCardsMenu_Exit;
+    private readonly InputAction m_BuyCardsMenu_MouseScroll;
     public struct BuyCardsMenuActions
     {
         private @PlayerController m_Wrapper;
         public BuyCardsMenuActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_BuyCardsMenu_Newaction;
+        public InputAction @LeftClick => m_Wrapper.m_BuyCardsMenu_LeftClick;
+        public InputAction @MousePos => m_Wrapper.m_BuyCardsMenu_MousePos;
+        public InputAction @Exit => m_Wrapper.m_BuyCardsMenu_Exit;
+        public InputAction @MouseScroll => m_Wrapper.m_BuyCardsMenu_MouseScroll;
         public InputActionMap Get() { return m_Wrapper.m_BuyCardsMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1077,16 +1184,34 @@ public class @PlayerController : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_BuyCardsMenuActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnNewaction;
+                @LeftClick.started -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnLeftClick;
+                @LeftClick.performed -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnLeftClick;
+                @LeftClick.canceled -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnLeftClick;
+                @MousePos.started -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnMousePos;
+                @MousePos.performed -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnMousePos;
+                @MousePos.canceled -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnMousePos;
+                @Exit.started -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnExit;
+                @MouseScroll.started -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnMouseScroll;
+                @MouseScroll.performed -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnMouseScroll;
+                @MouseScroll.canceled -= m_Wrapper.m_BuyCardsMenuActionsCallbackInterface.OnMouseScroll;
             }
             m_Wrapper.m_BuyCardsMenuActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @LeftClick.started += instance.OnLeftClick;
+                @LeftClick.performed += instance.OnLeftClick;
+                @LeftClick.canceled += instance.OnLeftClick;
+                @MousePos.started += instance.OnMousePos;
+                @MousePos.performed += instance.OnMousePos;
+                @MousePos.canceled += instance.OnMousePos;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
+                @MouseScroll.started += instance.OnMouseScroll;
+                @MouseScroll.performed += instance.OnMouseScroll;
+                @MouseScroll.canceled += instance.OnMouseScroll;
             }
         }
     }
@@ -1229,6 +1354,39 @@ public class @PlayerController : IInputActionCollection, IDisposable
         }
     }
     public CheatsActions @Cheats => new CheatsActions(this);
+
+    // New action map
+    private readonly InputActionMap m_Newactionmap;
+    private INewactionmapActions m_NewactionmapActionsCallbackInterface;
+    private readonly InputAction m_Newactionmap_Newaction;
+    public struct NewactionmapActions
+    {
+        private @PlayerController m_Wrapper;
+        public NewactionmapActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_Newactionmap_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(NewactionmapActions set) { return set.Get(); }
+        public void SetCallbacks(INewactionmapActions instance)
+        {
+            if (m_Wrapper.m_NewactionmapActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnNewaction;
+            }
+            m_Wrapper.m_NewactionmapActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+        }
+    }
+    public NewactionmapActions @Newactionmap => new NewactionmapActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1285,7 +1443,10 @@ public class @PlayerController : IInputActionCollection, IDisposable
     }
     public interface IBuyCardsMenuActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnLeftClick(InputAction.CallbackContext context);
+        void OnMousePos(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+        void OnMouseScroll(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1303,5 +1464,9 @@ public class @PlayerController : IInputActionCollection, IDisposable
     public interface ICheatsActions
     {
         void OnCheat(InputAction.CallbackContext context);
+    }
+    public interface INewactionmapActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }

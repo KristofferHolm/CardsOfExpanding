@@ -18,22 +18,20 @@ public class BuildingAbilityManager : Singleton<BuildingAbilityManager>
         if (hexGrid.GetAbilityUsed) return false;
         switch (hexGrid.BuildingId)
         {
-            case 0:
-            case 1:
-            case 2:
-                break;
             case 3:
                 return TownHall(hexGrid);
-            case 4:
-                break; //here is space for something else
-            case 5:
-            case 6:
+            case 11:
+                return DrawingBoard();
             default:
                 return false;
         }
         return false;
     }
-
+    bool DrawingBoard()
+    {
+        GameManager.Instance.OpenCardsMenu?.Invoke(true);
+        return true;
+    }
     bool CoalMine()
     {
         if (InventoryManager.Instance.PayTheCost(0, 1, 0, 1,true))

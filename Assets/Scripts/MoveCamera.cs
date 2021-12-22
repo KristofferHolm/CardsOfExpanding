@@ -22,7 +22,6 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
     float zoom;
     public Action<Vector3> CameraMovedDistance;
     public Camera MainCamera, CardCamera;
-    public LayerMask CardMask, Default, BookMask;
     private CardBehaviour cardInHand;
     private HexGridBehaviour currentHightlightedHexGrid;
     private bool hexGridHightlightClickedDown;
@@ -54,8 +53,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
         }
         if (Mathf.Abs(zoom) > 0.1f)
         {
-            //todo: get the camera by class
-            transform.position += transform.GetChild(0).forward * _zoomSpeed *zoom * Time.deltaTime;
+            transform.position += CardCamera.transform.forward * _zoomSpeed *zoom * Time.deltaTime;
             zoom *= 0.9f / (1 + Time.deltaTime);
         }
         else
@@ -75,7 +73,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
         //we check cardcamera first because it is alway infront of the main camera.
         Ray ray = CardCamera.ScreenPointToRay(mousePosition);
         
-        if (Physics.Raycast(ray, out var book, 10000, BookMask))
+        if (Physics.Raycast(ray, out var book, 10000, GameManager.Instance.BookMask))
         {
             if (book.transform.TryGetComponent<BookButton>(out var bookButton))
             {
@@ -83,14 +81,14 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
             }
             return null;
         }
-        else if (Physics.Raycast(ray, out var hit, 10000, CardMask))
+        else if (Physics.Raycast(ray, out var hit, 10000, GameManager.Instance.CardMask))
         {
             return hit.transform.GetComponent<CardBehaviour>();
         }
         else 
         {
             ray = MainCamera.ScreenPointToRay(mousePosition);
-            if (Physics.Raycast(ray,out var hexHit, 10000, Default))
+            if (Physics.Raycast(ray,out var hexHit, 10000, GameManager.Instance.Default))
             {
                 //do something with the hexfields
                 return hexHit.transform.GetComponent<HexGridBehaviour>();
@@ -115,9 +113,19 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
             // when actions get triggered.
             controls.Player.SetCallbacks(this);
         }
+        GameManager.Instance.OpenCardsMenu += ControlShift;
         controls.Player.Enable();
         OnCardDraggin += (x) => draggingCard = x;
     }
+
+    private void ControlShift(bool openMenu)
+    {
+        if(openMenu)
+            RunLater.Instance.EndOfFrame(()=>controls.Player.Disable());
+        else
+            controls.Player.Enable(); 
+    }
+
     void GridHighLightClicked(bool onDown)
     {
         if (hexGridHightlightClickedDown == onDown) return;
@@ -157,7 +165,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
                 card.IsbeingDragged = true;
                 cardInHand = card;
                 OnCardDraggin.Invoke(true);
-                Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition), out var mousepos, 100, Default);
+                Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition), out var mousepos, 100, GameManager.Instance.Default);
                 CardManager.Instance.MousePos.position = mousepos.point;
                 BookManager.Instance.CloseBook();
             }
@@ -260,8 +268,8 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
     public void OnMousePos(InputAction.CallbackContext context)
     {
         mousePosition = context.ReadValue<Vector2>();
-        if(!Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition), 100, BookMask | CardMask) && 
-            Physics.Raycast(MainCamera.ScreenPointToRay(mousePosition), out var gridHit, 10000, Default))
+        if(!Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition), 100, GameManager.Instance.BookMask | GameManager.Instance.CardMask) && 
+            Physics.Raycast(MainCamera.ScreenPointToRay(mousePosition), out var gridHit, 10000, GameManager.Instance.Default))
         {
             if (gridHit.transform.TryGetComponent<HexGridBehaviour>(out var hexGridBehaviour) &&
                 hexGridBehaviour != currentHightlightedHexGrid)
@@ -276,7 +284,7 @@ public class MoveCamera : Singleton<MoveCamera>, PlayerController.IPlayerActions
             GridHighlight.SetActive(false);
         if (draggingCard && cardInHand != null)
         {
-            Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition),out var hit, 100,Default);
+            Physics.Raycast(CardCamera.ScreenPointToRay(mousePosition),out var hit, 100, GameManager.Instance.Default);
             CardManager.Instance.MousePos.position = hit.point;
         }
     }

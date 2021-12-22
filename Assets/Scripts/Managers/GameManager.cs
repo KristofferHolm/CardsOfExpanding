@@ -10,7 +10,9 @@ public class GameManager : Singleton<GameManager>
     public Action OnStartGame;
     public Action<bool> ShowResources;
     public Action<bool> OpenCardsMenu;
- 
+    public LayerMask CardMask, Default, BookMask;
+
+
     public Transform MainCamera {
         get
         {
@@ -27,7 +29,6 @@ public class GameManager : Singleton<GameManager>
         //but this should be changed later, I think
         InventoryManager.Instance.Workers = 3;
         InventoryManager.Instance.WorkersLeft = 3;
-        
     }
 
     public void EndTurn(Action callback)

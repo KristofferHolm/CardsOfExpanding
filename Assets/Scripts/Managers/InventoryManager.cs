@@ -101,7 +101,8 @@ public class InventoryManager : Singleton<InventoryManager>
         ResourcesText[2].text = wood.ToString();
         ResourcesText[3].text = stone.ToString();
         ResourcesText[4].text = food.ToString();
-        ResourcesText[5].text = pollution.ToString();
+        ResourcesText[5].text = coin.ToString();
+        ResourcesText[6].text = pollution.ToString();
     }
     public void GainResources(int wood = 0, int stone =0, int food=0, int workersleft=0)
     {

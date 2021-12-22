@@ -99,13 +99,14 @@ public class CardManager : Singleton<CardManager>
             }
         }
     }
-    public GameObject CreateCard(Card cardData)
+    public GameObject CreateCard(Card cardData, bool setInactive = false)
     {
         GameObject card;
         if (cardData is ActionCard)
         {
             card = Instantiate(ActionCardPrefab,transform.parent);
             card.GetComponent<ActionCardBehaviour>().SetCardData(cardData as ActionCard);
+            card.GetComponent<CardBehaviour>().Inactive = setInactive;
             card.transform.SetPositionAndRotation(CardCreationPosition.position, CardCreationPosition.rotation);
             return card;
         }
@@ -113,9 +114,11 @@ public class CardManager : Singleton<CardManager>
         {
             card = Instantiate(BlueprintCardPrefab, transform.parent);
             card.GetComponent<BlueprintCardBehaviour>().SetCardData(cardData as BlueprintCard);
+            card.GetComponent<CardBehaviour>().Inactive = setInactive;
             card.transform.SetPositionAndRotation(CardCreationPosition.position, CardCreationPosition.rotation);
             return card;
         }
+       
         return null;
     }
     public void GainCard(CardBehaviour card, CardPlace place)

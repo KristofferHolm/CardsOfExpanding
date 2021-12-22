@@ -9,6 +9,8 @@ public class CardBehaviour : MonoBehaviour
     [SerializeField] private Transform TextParent;
     [SerializeField] private MeshRenderer Icon;
     BoxCollider boxCollider;
+    private bool _inactive;
+    public bool Inactive { get => _inactive; set => _inactive = value; }
     protected bool _isReadyToBeSpend;
     public bool IsReadyToBeSpend
     {
@@ -53,8 +55,11 @@ public class CardBehaviour : MonoBehaviour
             return boxCollider; 
         } set => boxCollider = value; }
 
+   
+
     private void Update()
     {
+        if (Inactive) return;
         // TODO OPTIMIZATION
         Collider.enabled = IsInHand;
         if (!_isBeingDragged)
